@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Config name="Configration Information">
+	<ServerIP ip="127.0.0.1"/>
+	<!-- <BigraphModel filepath="doc/BigraphModelGen(true).txt" serverport="4700"/> -->
+	<BigraphModel filepath="doc/happy.txt" serverport="4700"/>
+	<BigraphDataModel filepath="doc/DecoctionDataModel.xml"/>
+	<!--  <EFSMModel filepath="doc/EFSMModel.smd.xml"/> -->
+	<EFSMModel filepath="doc/airport.smd.xml"/>
+	<PetrinetModel filepath="doc/produceDecoction.xml"/>
+	<!-- <ServiceModel filepath="doc/ServiceModel.xml" serverport="4800"/> -->
+	<ServiceModel filepath="doc/ServiceModelAir.xml" serverport="4800"/>
+	<BGMFile filepath="doc/decoction(new2).bgm"/>
+	<SortingConstraint filepath="doc/SortingConstraint.xml"/>
+	<RulesInput filepath="doc/Rules.xml"/>
+	<PatternsOutput filepath="doc/Patterns.xml"/>
+	<TestCaseOutput filepath="doc/TestData.txt"/>
+	<TomcatRunPath path = "D:\\Program Files\\tomcat\\bin"/>
+	<OutputByBigMC filepath="doc/testPathByBigMC.txt"/>
+	<DefinePathOutput filepath="doc/dPath.txt"/>
+</Config>

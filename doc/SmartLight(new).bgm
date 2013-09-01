@@ -1,0 +1,23 @@
+# Controls
+%active Greater : 2;
+%active Less : 2;
+%active GreaterOrEqual : 2;
+%active LessOrEqual : 2;
+%active Equal : 2;
+%active NotEqual : 2;
+%active Zone : 0;
+%active Patient : 1;
+%active Light : 1;
+
+# Rules
+%rule r_0 Zone.$2 | Patient | $0 -> Zone.($2 | Patient) | $0;
+%rule r_1 Zone.(Patient | Light) | $0 -> Zone.(Patient | Light) | $0;
+%rule r_2 Zone.(Patient | Light) | $0 -> Zone.(Patient | Light) | $0;
+%rule r_3 Zone.(Light | $1) | $0 -> Zone.(Light | $1) | $0;
+%rule r_4 Zone.(Patient | $2) | $1 -> Zone.$2 | Patient | $1;
+
+# Model
+%agent z1:Zone.(l1:Light | $2) | p1:Patient | p2:Patient | z2:Zone.(l2:Light | $4);
+
+# Go!
+%check;

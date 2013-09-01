@@ -1,0 +1,172 @@
+digraph reaction_graph {
+rankdir = LR;
+
+n1e[label="out",color="green",style="filled"]
+//Patient out of Hospital
+ n1e -> n2e[label="r_0",color="red",style="bold"];
+
+n2e[label="Hospital",color="green",style="filled"]
+//Patient in Hospital
+ n2e -> n3e[label="r_1",color="red",style="bold"];
+ n2e -> n4e[label="r_26"];
+ n2e -> n5e[label="r_34"];
+ n2e -> n1e[label="r_41"];
+
+n3e[label="ConRoom",color="green",style="filled"]
+//Patient in ConsultingRoom
+ n3e -> n6e[label="r_2",color="red",style="bold"];
+
+n4e[label="ChaRoom"]
+//Patient in ChargingRoom
+ n4e -> n2e[label="r_30"];
+
+n5e[label="Pharmacy"]
+//Patient in Pharmacy
+ n5e -> n2e[label="r_38"];
+
+n6e[label="ConRoom \n linked Pre",color="green",style="filled"]
+//Patient in ConsultingRoom && Patient linked Prescription
+ n6e -> n7e[label="r_3",color="red",style="bold"];
+
+n7e[label="ConRoom \n linked Pre \n Bill",color="green",style="filled"]
+//Patient in ConsultingRoom && Patient linked Prescription && Bill in ChargingRoom
+ n7e -> n9e[label="r_4",color="red",style="bold"];
+
+n9e[label="Hospital \n linked Pre \n Bill",color="green",style="filled"]
+//Patient in Hospital && Patient linked Prescription && Bill in ChargingRoom
+ n9e -> n13e[label="r_5",color="red",style="bold"];
+ n9e -> n7e[label="r_18"];
+ n9e -> n14e[label="r_35"];
+ n9e -> n15e[label="r_42"];
+
+n13e[label="ChaRoom \n linked Pre \n Bill",color="green",style="filled"]
+//Patient in ChargingRoom && Patient linked Prescription && Bill in ChargingRoom
+ n13e -> n16e[label="r_6",color="red",style="bold"];
+
+n14e[label="Pharmacy \n linked Pre \n Bill"]
+//Patient in Pharmacy && Patient linked Prescription && Bill in ChargingRoom
+ n14e -> n9e[label="r_40"];
+
+n15e[label="out \n linked Pre \n Bill",color="blue",style="filled"]
+//Patient out of Hospital && Patient linked Prescription && Bill in ChargingRoom
+
+n16e[label="ChaRoom \n linked Bill",color="green",style="filled"]
+//Patient in ChargingRoom && Patient linked Bill
+ n16e -> n17e[label="r_7",color="red",style="bold"];
+ n16e -> n18e[label="r_8",color="red",style="bold"];
+
+n17e[label="ChaRoom \n linked Bill \n Pill",color="green",style="filled"]
+//Patient in ChargingRoom && Patient linked Bill && Pill in Pharmacy
+ n17e -> n20e[label="r_10",color="red",style="bold"];
+
+n18e[label="ChaRoom \n linked Bill \n Material",color="green",style="filled"]
+//Patient in ChargingRoom && Patient linked Bill && Material in Pharmacy
+ n18e -> n21e[label="r_9",color="red",style="bold"];
+ n18e -> n22e[label="r_10",color="red",style="bold"];
+ 
+n20e[label="Hospital \n linked Bill \n Pill",color="green",style="filled"]
+//Patient in Hospital && Patient linked Bill && Pill in Pharmacy
+ n20e -> n26e[label="r_11",color="red",style="bold"];
+ n20e -> n27e[label="r_19"];
+ n20e -> n17e[label="r_27"];
+ n20e -> n28e[label="r_43"];
+
+n21e[label="ChaRoom \n linked Bill \n Decoction",color="green",style="filled"]
+//Patient in ChargingRoom && Patient linked Bill && Decoction in Pharmacy
+ n21e -> n29e[label="r_10",color="red",style="bold"];
+
+n22e[label="Hospital \n linked Bill \n Material",color="green",style="filled"]
+//Patient in Hospital && Patient linked Bill && Material in Pharmacy
+ n22e -> n29e[label="r_9",color="red",style="bold"];
+ n22e -> n30e[label="r_11"];
+ n22e -> n31e[label="r_19",color="red",style="bold"];
+ n22e -> n18e[label="r_27"];
+ n22e -> n32e[label="r_43"];
+
+n26e[label="Pharmacy \n linked Bill \n Pill",color="green",style="filled"]
+//Patient in Pharmacy && Patient linked Bill && Pill in Pharmacy
+ n26e -> n33e[label="r_12",color="red",style="bold"];
+ n26e -> n20e[label="r_40"];
+
+n27e[label="ConRoom \n linked Bill \n Pill"]
+//Patient in ConRoom && Patient linked Bill && Pill in Pharmacy
+ n27e -> n20e[label="r_23"];
+
+n28e[label="out \n linked Bill \n Pill",color="blue",style="filled"]
+//Patient out of Hospital && Patient linked Bill && Pill in Pharmacy
+
+n29e[label="Hospital \n linked Bill \n Decoction",color="green",style="filled"]
+//Patient in Hospital && Patient linked Bill && Decoction in Pharmacy
+ n29e -> n34e[label="r_11",color="red",style="bold"];
+ n29e -> n36e[label="r_19"];
+ n29e -> n21e[label="r_27"];
+ n29e -> n35e[label="r_43"];
+
+n30e[label="Pharmacy \n linked Bill \n Material"]
+//Patient in Pharmacy && Patient linked Bill && Material in Pharmacy
+ n30e -> n22e[label="r_40"];
+
+n31e[label="ConRoom \n linked Bill \n Material",color="green",style="filled"]
+//Patient in ConsultingRoom && Patient linked Bill && Material in Pharmacy
+ n31e -> n36e[label="r_9",color="red",style="bold"];
+ n31e -> n22e[label="r_23"];
+
+n32e[label="out \n linked Bill \n Material",color="blue",style="filled"]
+//Patient out of Hospital && Patient linked Bill && Material in Pharmacy
+
+n33e[label="Pharmacy \n with Pill",color="green",style="filled"]
+//Patient in Pharmacy && Patient with Pill
+ n33e -> n37e[label="r_14",color="red",style="bold"];
+
+n34e[label="Pharmacy \n linked Bill \n Decoction",color="green",style="filled"]
+//Patient in Pharmacy && Patient linked Bill && Decoction in Pharmacy
+ n34e -> n38e[label="r_13",color="red",style="bold"];
+ n34e -> n29e[label="r_40"];
+ 
+n35e[label="out \n linked Bill \n Decoction",color="blue",style="filled"]
+//Patient out of Hospital && Patient linked Bill && Decoction in Pharmacy
+
+n36e[label="ConRoom \n linked Bill \n Decoction",color="green",style="filled"]
+//Patient in ConsultingRoom && Patient linked Bill && Decoction in Pharmacy
+ n36e -> n29e[label="r_23",color="red",style="bold"];
+
+n37e[label="Hospital \n with Pill",color="green",style="filled"]
+//Patient in Hospital && Patient with Pill
+ n37e -> n39e[label="r_16",color="red",style="bold"];
+ n37e -> n40e[label="r_20"];
+ n37e -> n41e[label="r_28"];
+ n37e -> n33e[label="r_36"];
+
+n38e[label="Pharmacy \n with Dec",color="green",style="filled"]
+//Patient in Pharmacy && Patient with Decoction
+ n38e -> n42e[label="r_15",color="red",style="bold"];
+ 
+n39e[label="out \n with Pill",color="green",style="filled"]
+//Patient out of Hospital && Patient with Pill
+
+n40e[label="ConRoom \n with Pill"]
+//Patient in ConsultingRoom && Patient with Pill
+ n40e -> n37e[label="r_24"];
+
+n41e[label="ChaRoom \n with Pill"]
+//Patient in ChargingRoom && Patient with Pill
+ n41e -> n37e[label="r_32"];
+
+n42e[label="Hospital \n with Dec",color="green",style="filled"]
+//Patient in Hospital && Patient with Decoction
+ n42e -> n43e[label="r_17",color="red",style="bold"];
+ n42e -> n44e[label="r_21"];
+ n42e -> n45e[label="r_29"];
+ n42e -> n38e[label="r_37"];
+
+n43e[label="out \n with Dec",color="green",style="filled"]
+//Patient out of Hospital && Patient with Decoction
+
+n44e[label="ConRoom \n with Dec"]
+//Patient in ConsultingRoom && Patient with Decoction
+ n44e -> n42e[label="r_25"];
+
+n45e[label="ChaRoom \n with Dec"]
+//Patient in ChargingRoom && Patient with Decoction
+ n45e -> n42e[label="r_33"];
+}

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FilterRules name="Filter Rules For BigMC">
+	<ReactionRuleRelationship>
+		<ReactionRule name="r_0" details="Get in Hospital"/>
+		<ReactionRule name="r_1" details="Get in ConsultingRoom"/>
+		<ReactionRule name="r_2" details="Put and Link Prescription"/>
+		<ReactionRule name="r_3" details="Put Bill"/>
+		<ReactionRule name="r_4" details="Get out of ConsultingRoom linked Prescription"/>
+		<ReactionRule name="r_5" details="Get in ChargingRoom linked Prescription"/>
+		<ReactionRule name="r_6" details="Link Bill"/>
+		<ReactionRule name="r_7" details="Put Material"/>
+		<ReactionRule name="r_8" details="Put Decoction"/>
+		<ReactionRule name="r_9" details="Get out of ChargingRoom linked Bill"/>
+		<ReactionRule name="r_10" details="Get in Pharmacy linked Bill"/>
+		<ReactionRule name="r_11" details="Link Decoction"/>
+		<ReactionRule name="r_12" details="Get out of Pharmacy with Decoction"/>
+		<ReactionRule name="r_13" details="Get out of Hospital with Decoction"/>
+		
+		<ReactionRule name="r_14" details="Get in ConsultingRoom linked Prescription"/>
+		<ReactionRule name="r_15" details="Get in ConsultingRoom linked Bill"/>
+		<ReactionRule name="r_16" details="Get in ConsultingRoom with Decoction"/>
+		<ReactionRule name="r_17" details="Get out of ConsultingRoom"/>
+		<ReactionRule name="r_18" details="Get out of ConsultingRoom linked Bill"/>
+		<ReactionRule name="r_19" details="Get out of ConsultingRoom with Decoction"/>
+		<ReactionRule name="r_20" details="Get in ChargingRoom"/>
+		<ReactionRule name="r_21" details="Get in ChargingRoom linked Bill"/>
+		<ReactionRule name="r_22" details="Get in ChargingRoom with Decoction"/>
+		<ReactionRule name="r_23" details="Get out of ChargingRoom"/>
+		<ReactionRule name="r_24" details="Get out of ChargingRoom linked Prescription"/>
+		<ReactionRule name="r_25" details="Get out of ChargingRoom with Decoction"/>
+		<ReactionRule name="r_26" details="Get in Pharmacy"/>
+		<ReactionRule name="r_27" details="Get in Pharmacy linked Prescription"/>
+		<ReactionRule name="r_28" details="Get in Pharmacy with Decoction"/>
+		<ReactionRule name="r_29" details="Get out of Pharmacy"/>
+		<ReactionRule name="r_30" details="Get out of Pharmacy linked Prescription"/>
+		<ReactionRule name="r_31" details="Get out of Pharmacy linked Bill"/>
+		<ReactionRule name="r_32" details="Get out of Hospital"/>
+		<ReactionRule name="r_33" details="Get out of Hospital linked Prescription"/>
+		<ReactionRule name="r_34" details="Get out of Hospital linked Bill"/>		
+	</ReactionRuleRelationship>
+</FilterRules>

@@ -1,0 +1,801 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<middleware>
+    <data>
+        <entry>
+            <key>Patient in Pharmacy</key>
+            <value></value>
+        </entry>
+        <entry>
+            <key>Patient link Bill</key>
+            <value></value>
+        </entry>
+        <entry>
+            <key>bill</key>
+            <value></value>
+        </entry>
+        <entry>
+            <key>prescription</key>
+            <value></value>
+        </entry>
+        <entry>
+            <key>Bill in ChargingRoom</key>
+            <value></value>
+        </entry>
+        <entry>
+            <key>Patient link Prescription</key>
+            <value></value>
+        </entry>
+        <entry>
+            <key>Material in Pharmacy</key>
+            <value></value>
+        </entry>
+        <entry>
+            <key>Pill in Pharmacy</key>
+            <value></value>
+        </entry>
+        <entry>
+            <key>Patient in ChargingRoom</key>
+            <value></value>
+        </entry>
+        <entry>
+            <key>isDecoction of Patient</key>
+            <value></value>
+        </entry>
+        <entry>
+            <key>Patient link Pill</key>
+            <value></value>
+        </entry>
+        <entry>
+            <key>Patient link Decoction</key>
+            <value></value>
+        </entry>
+        <entry>
+            <key>pill</key>
+            <value></value>
+        </entry>
+        <entry>
+            <key>isDone</key>
+            <value></value>
+        </entry>
+        <entry>
+            <key>Patient in ConsultingRoom</key>
+            <value></value>
+        </entry>
+        <entry>
+            <key>r</key>
+            <value></value>
+        </entry>
+        <entry>
+            <key>Decoction in Pharmacy</key>
+            <value></value>
+        </entry>
+        <entry>
+            <key>billPayed</key>
+            <value></value>
+        </entry>
+        <entry>
+            <key>Patient in Hospital</key>
+            <value></value>
+        </entry>
+    </data>
+    <states>
+        <index>0</index>
+        <transitions>
+            <guard>Patient in ConsultingRoom no change</guard>
+            <initial>0</initial>
+            <input>get:Patient in ConsultingRoom</input>
+            <name>T0</name>
+            <next>0</next>
+        </transitions>
+        <transitions>
+            <guard>Patient in ConsultingRoom changed</guard>
+            <initial>0</initial>
+            <input>get:Patient in ConsultingRoom</input>
+            <name>T1</name>
+            <next>1</next>
+        </transitions>
+        <visited>false</visited>
+    </states>
+    <states>
+        <index>1</index>
+        <transitions>
+            <action>prescription = call_createPrescription(Patient)</action>
+            <initial>1</initial>
+            <name>T2</name>
+            <next>2</next>
+        </transitions>
+        <visited>false</visited>
+    </states>
+    <states>
+        <index>2</index>
+        <transitions>
+            <action>put:prescription</action>
+            <initial>2</initial>
+            <name>T3</name>
+            <next>3</next>
+        </transitions>
+        <visited>false</visited>
+    </states>
+    <states>
+        <index>3</index>
+        <transitions>
+            <guard>Patient link Prescription no change</guard>
+            <initial>3</initial>
+            <input>get:Patient link Prescription</input>
+            <name>T4</name>
+            <next>1</next>
+        </transitions>
+        <transitions>
+            <guard>Patient link Prescription changed</guard>
+            <initial>3</initial>
+            <input>get:Patient link Prescription</input>
+            <name>T5</name>
+            <next>4</next>
+        </transitions>
+        <visited>false</visited>
+    </states>
+    <states>
+        <index>4</index>
+        <transitions>
+            <action>bill = call_createBill(Prescription)</action>
+            <initial>4</initial>
+            <name>T6</name>
+            <next>5</next>
+        </transitions>
+        <visited>false</visited>
+    </states>
+    <states>
+        <index>5</index>
+        <transitions>
+            <action>put:bill</action>
+            <initial>5</initial>
+            <name>T7</name>
+            <next>6</next>
+        </transitions>
+        <visited>false</visited>
+    </states>
+    <states>
+        <index>6</index>
+        <transitions>
+            <guard>Bill in ChargingRoom no change</guard>
+            <initial>6</initial>
+            <input>get:Bill in ChargingRoom</input>
+            <name>T8</name>
+            <next>4</next>
+        </transitions>
+        <transitions>
+            <guard>Bill in ChargingRoom changed</guard>
+            <initial>6</initial>
+            <input>get:Bill in ChargingRoom</input>
+            <name>T9</name>
+            <next>7</next>
+        </transitions>
+        <visited>false</visited>
+    </states>
+    <states>
+        <index>7</index>
+        <transitions>
+            <guard>Patient in ChargingRoom no change</guard>
+            <initial>7</initial>
+            <input>get:Patient in ChargingRoom</input>
+            <name>T10</name>
+            <next>7</next>
+        </transitions>
+        <transitions>
+            <guard>Patient in ChargingRoom changed</guard>
+            <initial>7</initial>
+            <input>get:Patient in ChargingRoom</input>
+            <name>T11</name>
+            <next>8</next>
+        </transitions>
+        <transitions>
+            <guard>Patient in Hospital no change</guard>
+            <initial>7</initial>
+            <input>get:Patient in Hospital</input>
+            <name>T12</name>
+            <next>27</next>
+        </transitions>
+        <visited>false</visited>
+    </states>
+    <states>
+        <index>8</index>
+        <transitions>
+            <action>billPayed = call_payBill(Bill)</action>
+            <initial>8</initial>
+            <name>T13</name>
+            <next>9</next>
+        </transitions>
+        <visited>false</visited>
+    </states>
+    <states>
+        <index>9</index>
+        <transitions>
+            <action>put:billPayed</action>
+            <initial>9</initial>
+            <name>T14</name>
+            <next>10</next>
+        </transitions>
+        <visited>false</visited>
+    </states>
+    <states>
+        <index>10</index>
+        <transitions>
+            <guard>Patient link Bill no change</guard>
+            <initial>10</initial>
+            <input>get:Patient link Bill</input>
+            <name>T15</name>
+            <next>8</next>
+        </transitions>
+        <transitions>
+            <guard>Patient link Bill changed</guard>
+            <initial>10</initial>
+            <input>get:Patient link Bill</input>
+            <name>T16</name>
+            <next>11</next>
+        </transitions>
+        <visited>false</visited>
+    </states>
+    <states>
+        <index>11</index>
+        <transitions>
+            <guard>isDecoction of Patient == true</guard>
+            <initial>11</initial>
+            <input>get:isDecoction of Patient</input>
+            <name>T17</name>
+            <next>12</next>
+        </transitions>
+        <transitions>
+            <guard>isDecoction of Patient == false</guard>
+            <initial>11</initial>
+            <input>get:isDecoction of Patient</input>
+            <name>T29</name>
+            <next>18</next>
+        </transitions>
+        <visited>false</visited>
+    </states>
+    <states>
+        <index>12</index>
+        <transitions>
+            <action>r = call_produceDecoction(Prescription)</action>
+            <initial>12</initial>
+            <name>T18</name>
+            <next>13</next>
+        </transitions>
+        <visited>false</visited>
+    </states>
+    <states>
+        <index>13</index>
+        <transitions>
+            <action>put:material</action>
+            <initial>13</initial>
+            <name>T19</name>
+            <next>14</next>
+        </transitions>
+        <visited>false</visited>
+    </states>
+    <states>
+        <index>14</index>
+        <transitions>
+            <guard>Material in Pharmacy no change</guard>
+            <initial>14</initial>
+            <input>get:Material in Pharmacy</input>
+            <name>T20</name>
+            <next>13</next>
+        </transitions>
+        <transitions>
+            <guard>Material in Pharmacy changed</guard>
+            <initial>14</initial>
+            <input>get:Material in Pharmacy</input>
+            <name>T21</name>
+            <next>15</next>
+        </transitions>
+        <visited>false</visited>
+    </states>
+    <states>
+        <index>15</index>
+        <transitions>
+            <action>isDone = call_checkService(r)</action>
+            <guard>isDone == false &amp;&amp; Patient in Hospital changed</guard>
+            <initial>15</initial>
+            <input>get:Patient in Hospital</input>
+            <name>T22</name>
+            <next>15</next>
+        </transitions>
+        <transitions>
+            <guard>Patient in Hospital no change</guard>
+            <initial>15</initial>
+            <input>get:Patient in Hospital</input>
+            <name>T23</name>
+            <next>27</next>
+        </transitions>
+        <transitions>
+            <action>isDone = call_checkService(r)</action>
+            <guard>isDone == true &amp;&amp; Patient in Hospital changed</guard>
+            <initial>15</initial>
+            <input>get:Patient in Hospital</input>
+            <name>T24</name>
+            <next>16</next>
+        </transitions>
+        <visited>false</visited>
+    </states>
+    <states>
+        <index>16</index>
+        <transitions>
+            <action>put:decoction</action>
+            <initial>16</initial>
+            <name>T25</name>
+            <next>17</next>
+        </transitions>
+        <visited>false</visited>
+    </states>
+    <states>
+        <index>17</index>
+        <transitions>
+            <guard>Decoction in Pharmacy no change &amp;&amp; Patient in Hospital changed</guard>
+            <initial>17</initial>
+            <input>get:Decoction in Pharmacy &amp;&amp; get:Patient in Hospital</input>
+            <name>T26</name>
+            <next>16</next>
+        </transitions>
+        <transitions>
+            <guard>Decoction in Pharmacy no change &amp;&amp; Patient in Hospital no change</guard>
+            <initial>17</initial>
+            <input>get:Decoction in Pharmacy &amp;&amp; get:Patient in Hospital</input>
+            <name>T27</name>
+            <next>27</next>
+        </transitions>
+        <transitions>
+            <guard>Decoction in Pharmacy changed</guard>
+            <initial>17</initial>
+            <input>get:Decoction in Pharmacy</input>
+            <name>T28</name>
+            <next>21</next>
+        </transitions>
+        <visited>false</visited>
+    </states>
+    <states>
+        <index>18</index>
+        <transitions>
+            <action>pill = call_createPill(Bill)</action>
+            <initial>18</initial>
+            <name>T30</name>
+            <next>19</next>
+        </transitions>
+        <visited>false</visited>
+    </states>
+    <states>
+        <index>19</index>
+        <transitions>
+            <action>put:pill</action>
+            <initial>19</initial>
+            <name>T31</name>
+            <next>20</next>
+        </transitions>
+        <visited>false</visited>
+    </states>
+    <states>
+        <index>20</index>
+        <transitions>
+            <guard>Pill in Pharmacy changed</guard>
+            <initial>20</initial>
+            <input>get:Pill in Pharmacy</input>
+            <name>T33</name>
+            <next>21</next>
+        </transitions>
+        <visited>false</visited>
+    </states>
+    <states>
+        <index>21</index>
+        <transitions>
+            <guard>Pill in Pharmacy no change</guard>
+            <initial>21</initial>
+            <input>get:Pill in Pharmacy</input>
+            <name>T32</name>
+            <next>19</next>
+        </transitions>
+        <transitions>
+            <guard>Patient in Pharmacy no change</guard>
+            <initial>21</initial>
+            <input>get:Patient in Pharmacy</input>
+            <name>T34</name>
+            <next>22</next>
+        </transitions>
+        <transitions>
+            <guard>Patient in Hospital no change</guard>
+            <initial>21</initial>
+            <input>get:Patient in Hospital</input>
+            <name>T35</name>
+            <next>27</next>
+        </transitions>
+        <transitions>
+            <guard>Patient in Pharmacy changed</guard>
+            <initial>21</initial>
+            <input>get:Patient in Pharmacy</input>
+            <name>T36</name>
+            <next>21</next>
+        </transitions>
+        <visited>false</visited>
+    </states>
+    <states>
+        <index>22</index>
+        <transitions>
+            <guard>isDecoction of Patient == true</guard>
+            <initial>22</initial>
+            <input>get:isDecoction of Patient</input>
+            <name>T37</name>
+            <next>23</next>
+        </transitions>
+        <transitions>
+            <guard>isDecoction of Patient == false</guard>
+            <initial>22</initial>
+            <input>get:isDecoction of Patient</input>
+            <name>T41</name>
+            <next>25</next>
+        </transitions>
+        <visited>false</visited>
+    </states>
+    <states>
+        <index>23</index>
+        <transitions>
+            <action>put:Patient link Decoction</action>
+            <initial>23</initial>
+            <name>T38</name>
+            <next>24</next>
+        </transitions>
+        <visited>false</visited>
+    </states>
+    <states>
+        <index>24</index>
+        <transitions>
+            <guard>Patient link Decoction no change</guard>
+            <initial>24</initial>
+            <input>get:Patient link Decoction</input>
+            <name>T39</name>
+            <next>23</next>
+        </transitions>
+        <transitions>
+            <guard>Patient link Decoction changed</guard>
+            <initial>24</initial>
+            <input>get:Patient link Decoction</input>
+            <name>T40</name>
+            <next>27</next>
+        </transitions>
+        <visited>false</visited>
+    </states>
+    <states>
+        <index>25</index>
+        <transitions>
+            <action>put:Patient link Pill</action>
+            <initial>25</initial>
+            <name>T42</name>
+            <next>26</next>
+        </transitions>
+        <visited>false</visited>
+    </states>
+    <states>
+        <index>26</index>
+        <transitions>
+            <guard>Patient link Pill no change</guard>
+            <initial>26</initial>
+            <input>get:Patient link Pill</input>
+            <name>T43</name>
+            <next>25</next>
+        </transitions>
+        <transitions>
+            <guard>Patient link Pill changed</guard>
+            <initial>26</initial>
+            <input>get:Patient link Pill</input>
+            <name>T44</name>
+            <next>27</next>
+        </transitions>
+        <visited>false</visited>
+    </states>
+    <states>
+        <index>27</index>
+        <visited>false</visited>
+    </states>
+    <trans>
+        <guard>Patient in ConsultingRoom no change</guard>
+        <initial>0</initial>
+        <input>get:Patient in ConsultingRoom</input>
+        <name>T0</name>
+        <next>0</next>
+    </trans>
+    <trans>
+        <guard>Patient in ConsultingRoom changed</guard>
+        <initial>0</initial>
+        <input>get:Patient in ConsultingRoom</input>
+        <name>T1</name>
+        <next>1</next>
+    </trans>
+    <trans>
+        <action>prescription = call_createPrescription(Patient)</action>
+        <initial>1</initial>
+        <name>T2</name>
+        <next>2</next>
+    </trans>
+    <trans>
+        <action>put:prescription</action>
+        <initial>2</initial>
+        <name>T3</name>
+        <next>3</next>
+    </trans>
+    <trans>
+        <guard>Patient link Prescription no change</guard>
+        <initial>3</initial>
+        <input>get:Patient link Prescription</input>
+        <name>T4</name>
+        <next>1</next>
+    </trans>
+    <trans>
+        <guard>Patient link Prescription changed</guard>
+        <initial>3</initial>
+        <input>get:Patient link Prescription</input>
+        <name>T5</name>
+        <next>4</next>
+    </trans>
+    <trans>
+        <action>bill = call_createBill(Prescription)</action>
+        <initial>4</initial>
+        <name>T6</name>
+        <next>5</next>
+    </trans>
+    <trans>
+        <action>put:bill</action>
+        <initial>5</initial>
+        <name>T7</name>
+        <next>6</next>
+    </trans>
+    <trans>
+        <guard>Bill in ChargingRoom no change</guard>
+        <initial>6</initial>
+        <input>get:Bill in ChargingRoom</input>
+        <name>T8</name>
+        <next>4</next>
+    </trans>
+    <trans>
+        <guard>Bill in ChargingRoom changed</guard>
+        <initial>6</initial>
+        <input>get:Bill in ChargingRoom</input>
+        <name>T9</name>
+        <next>7</next>
+    </trans>
+    <trans>
+        <guard>Patient in ChargingRoom no change</guard>
+        <initial>7</initial>
+        <input>get:Patient in ChargingRoom</input>
+        <name>T10</name>
+        <next>7</next>
+    </trans>
+    <trans>
+        <guard>Patient in ChargingRoom changed</guard>
+        <initial>7</initial>
+        <input>get:Patient in ChargingRoom</input>
+        <name>T11</name>
+        <next>8</next>
+    </trans>
+    <trans>
+        <guard>Patient in Hospital no change</guard>
+        <initial>7</initial>
+        <input>get:Patient in Hospital</input>
+        <name>T12</name>
+        <next>27</next>
+    </trans>
+    <trans>
+        <action>billPayed = call_payBill(Bill)</action>
+        <initial>8</initial>
+        <name>T13</name>
+        <next>9</next>
+    </trans>
+    <trans>
+        <action>put:billPayed</action>
+        <initial>9</initial>
+        <name>T14</name>
+        <next>10</next>
+    </trans>
+    <trans>
+        <guard>Patient link Bill no change</guard>
+        <initial>10</initial>
+        <input>get:Patient link Bill</input>
+        <name>T15</name>
+        <next>8</next>
+    </trans>
+    <trans>
+        <guard>Patient link Bill changed</guard>
+        <initial>10</initial>
+        <input>get:Patient link Bill</input>
+        <name>T16</name>
+        <next>11</next>
+    </trans>
+    <trans>
+        <guard>isDecoction of Patient == true</guard>
+        <initial>11</initial>
+        <input>get:isDecoction of Patient</input>
+        <name>T17</name>
+        <next>12</next>
+    </trans>
+    <trans>
+        <action>r = call_produceDecoction(Prescription)</action>
+        <initial>12</initial>
+        <name>T18</name>
+        <next>13</next>
+    </trans>
+    <trans>
+        <action>put:material</action>
+        <initial>13</initial>
+        <name>T19</name>
+        <next>14</next>
+    </trans>
+    <trans>
+        <guard>Material in Pharmacy no change</guard>
+        <initial>14</initial>
+        <input>get:Material in Pharmacy</input>
+        <name>T20</name>
+        <next>13</next>
+    </trans>
+    <trans>
+        <guard>Material in Pharmacy changed</guard>
+        <initial>14</initial>
+        <input>get:Material in Pharmacy</input>
+        <name>T21</name>
+        <next>15</next>
+    </trans>
+    <trans>
+        <action>isDone = call_checkService(r)</action>
+        <guard>isDone == false &amp;&amp; Patient in Hospital changed</guard>
+        <initial>15</initial>
+        <input>get:Patient in Hospital</input>
+        <name>T22</name>
+        <next>15</next>
+    </trans>
+    <trans>
+        <guard>Patient in Hospital no change</guard>
+        <initial>15</initial>
+        <input>get:Patient in Hospital</input>
+        <name>T23</name>
+        <next>27</next>
+    </trans>
+    <trans>
+        <action>isDone = call_checkService(r)</action>
+        <guard>isDone == true &amp;&amp; Patient in Hospital changed</guard>
+        <initial>15</initial>
+        <input>get:Patient in Hospital</input>
+        <name>T24</name>
+        <next>16</next>
+    </trans>
+    <trans>
+        <action>put:decoction</action>
+        <initial>16</initial>
+        <name>T25</name>
+        <next>17</next>
+    </trans>
+    <trans>
+        <guard>Decoction in Pharmacy no change &amp;&amp; Patient in Hospital changed</guard>
+        <initial>17</initial>
+        <input>get:Decoction in Pharmacy &amp;&amp; get:Patient in Hospital</input>
+        <name>T26</name>
+        <next>16</next>
+    </trans>
+    <trans>
+        <guard>Decoction in Pharmacy no change &amp;&amp; Patient in Hospital no change</guard>
+        <initial>17</initial>
+        <input>get:Decoction in Pharmacy &amp;&amp; get:Patient in Hospital</input>
+        <name>T27</name>
+        <next>27</next>
+    </trans>
+    <trans>
+        <guard>Decoction in Pharmacy changed</guard>
+        <initial>17</initial>
+        <input>get:Decoction in Pharmacy</input>
+        <name>T28</name>
+        <next>21</next>
+    </trans>
+    <trans>
+        <guard>isDecoction of Patient == false</guard>
+        <initial>11</initial>
+        <input>get:isDecoction of Patient</input>
+        <name>T29</name>
+        <next>18</next>
+    </trans>
+    <trans>
+        <action>pill = call_createPill(Bill)</action>
+        <initial>18</initial>
+        <name>T30</name>
+        <next>19</next>
+    </trans>
+    <trans>
+        <action>put:pill</action>
+        <initial>19</initial>
+        <name>T31</name>
+        <next>20</next>
+    </trans>
+    <trans>
+        <guard>Pill in Pharmacy no change</guard>
+        <initial>21</initial>
+        <input>get:Pill in Pharmacy</input>
+        <name>T32</name>
+        <next>19</next>
+    </trans>
+    <trans>
+        <guard>Pill in Pharmacy changed</guard>
+        <initial>20</initial>
+        <input>get:Pill in Pharmacy</input>
+        <name>T33</name>
+        <next>21</next>
+    </trans>
+    <trans>
+        <guard>Patient in Pharmacy no change</guard>
+        <initial>21</initial>
+        <input>get:Patient in Pharmacy</input>
+        <name>T34</name>
+        <next>21</next>
+    </trans>
+    <trans>
+        <guard>Patient in Hospital no change</guard>
+        <initial>21</initial>
+        <input>get:Patient in Hospital</input>
+        <name>T35</name>
+        <next>27</next>
+    </trans>
+    <trans>
+        <guard>Patient in Pharmacy changed</guard>
+        <initial>21</initial>
+        <input>get:Patient in Pharmacy</input>
+        <name>T36</name>
+        <next>22</next>
+    </trans>
+    <trans>
+        <guard>isDecoction of Patient == true</guard>
+        <initial>22</initial>
+        <input>get:isDecoction of Patient</input>
+        <name>T37</name>
+        <next>23</next>
+    </trans>
+    <trans>
+        <action>put:Patient link Decoction</action>
+        <initial>23</initial>
+        <name>T38</name>
+        <next>24</next>
+    </trans>
+    <trans>
+        <guard>Patient link Decoction no change</guard>
+        <initial>24</initial>
+        <input>get:Patient link Decoction</input>
+        <name>T39</name>
+        <next>23</next>
+    </trans>
+    <trans>
+        <guard>Patient link Decoction changed</guard>
+        <initial>24</initial>
+        <input>get:Patient link Decoction</input>
+        <name>T40</name>
+        <next>27</next>
+    </trans>
+    <trans>
+        <guard>isDecoction of Patient == false</guard>
+        <initial>22</initial>
+        <input>get:isDecoction of Patient</input>
+        <name>T41</name>
+        <next>25</next>
+    </trans>
+    <trans>
+        <action>put:Patient link Pill</action>
+        <initial>25</initial>
+        <name>T42</name>
+        <next>26</next>
+    </trans>
+    <trans>
+        <guard>Patient link Pill no change</guard>
+        <initial>26</initial>
+        <input>get:Patient link Pill</input>
+        <name>T43</name>
+        <next>25</next>
+    </trans>
+    <trans>
+        <guard>Patient link Pill changed</guard>
+        <initial>26</initial>
+        <input>get:Patient link Pill</input>
+        <name>T44</name>
+        <next>27</next>
+    </trans>
+</middleware>

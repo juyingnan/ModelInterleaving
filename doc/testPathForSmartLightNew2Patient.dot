@@ -1,0 +1,71 @@
+digraph reaction_graph {
+rankdir = LR;
+
+n1e[label="out"]
+//Patient out of Zone
+ n1e -> n2e[label="r_0"];
+ n1e -> n3e[label="r_0"];
+ n1e -> n4e[label="r_0"];
+ n1e -> n5e[label="r_0"];
+ n1e -> n1e[label="r_3"];
+
+n2e[label="Z1 P1"]
+//Patient1 in Zone1
+ n2e -> n6e[label="r_0"];
+ n2e -> n7e[label="r_0"];
+ n2e -> n2e[label="r_1"];
+ n2e -> n2e[label="r_2"];
+ n2e -> n1e[label="r_4"];
+
+n3e[label="Z2 P1"]
+//Patient1 in Zone2
+ n3e -> n8e[label="r_0"];
+ n3e -> n9e[label="r_0"];
+ n3e -> n3e[label="r_1"];
+ n3e -> n3e[label="r_2"];
+ n3e -> n1e[label="r_4"];
+
+n4e[label="Z1 P2"]
+//Patient2 in Zone1
+ n4e -> n6e[label="r_0"];
+ n4e -> n9e[label="r_0"];
+ n4e -> n4e[label="r_1"];
+ n4e -> n4e[label="r_2"];
+ n4e -> n1e[label="r_4"];
+
+n5e[label="Z2 P2"]
+//Patient2 in Zone2
+ n5e -> n8e[label="r_0"];
+ n5e -> n7e[label="r_0"];
+ n5e -> n5e[label="r_1"];
+ n5e -> n5e[label="r_2"];
+ n5e -> n1e[label="r_4"];
+
+n6e[label="Z1 P1P2"]
+//Patient1 Patient2 in Zone1
+ n6e -> n6e[label="r_1"];
+ n6e -> n6e[label="r_2"];
+ n6e -> n2e[label="r_4"];
+ n6e -> n4e[label="r_4"];
+
+n7e[label="Z1 P1\nZ2 P2"]
+//Patient1 in Zone1 && Patient2 in Zone2
+ n7e -> n7e[label="r_1"];
+ n7e -> n7e[label="r_2"];
+ n7e -> n2e[label="r_4"];
+ n7e -> n5e[label="r_4"];
+
+n8e[label="Z2 P1P2"]
+//Patient1 Patient2 in Zone2
+ n8e -> n8e[label="r_1"];
+ n8e -> n8e[label="r_2"];
+ n8e -> n3e[label="r_4"];
+ n8e -> n5e[label="r_4"];
+
+n9e[label="Z1 P2\nZ2 P1"]
+//Patient2 in Zone1 && Patient1 in Zone2
+ n9e -> n9e[label="r_1"];
+ n9e -> n9e[label="r_2"];
+ n9e -> n3e[label="r_4"];
+ n9e -> n4e[label="r_4"];
+}

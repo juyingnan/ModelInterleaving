@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Services name="ServiceModel">
+	<Address path=":8080/interleaveServices/services/" ip="127.0.0.1" namespace="http://interleave"/>
+	<Service index="1" name="createPrescription" path="Prescription" function="createPrescription" isProcess="false"/>
+	<Service index="2" name="createBill" path="Bill" function="createBill" isProcess="false"/>
+	<Service index="3" name="payBill" path="Bill" function="payBill" isProcess="false"/>
+	<Service index="4" name="produceDecoction" path="ProcessService" function="produceDecoction" isProcess="true" endFlag="nextContext:get;Decoction;in;Pharmacy"/>
+	<Service index="5" name="checkService" path="Check" function="checkService" isProcess="false"/>
+	<Service index="6" name="createPill" path="Pill" function="createPill" isProcess="false"/>
+</Services>

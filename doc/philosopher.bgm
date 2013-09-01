@@ -1,0 +1,21 @@
+# Controls
+%active Philosopher : 4;
+%active Fork : 3;
+
+# Names
+%innername left1;
+%innername left2;
+%innername right1;
+%innername right2;
+
+# Rules
+%rule r_0 Philosopher[idle,idle,left:edge,right2:edge] | Fork[idle,right1:edge,left:edge] | $0 -> Philosopher[lf:edge,idle,left:edge,right2:edge].Fork[lf:edge,right1:edge,left:edge] | $0;
+%rule r_1 Philosopher[lf:edge,idle,left1:edge,right2:edge].Fork[lf:edge,right1:edge,left1:edge] | Fork[idle,right2:edge,left2:edge] | $0 -> Philosopher[lf:edge,rf:edge,left1:edge,right2:edge].(Fork[lf:edge,right1:edge,left1:edge] | Fork[rf:edge,right2:edge,left2:edge]) | $0;
+%rule r_2 Philosopher[lf:edge,rf:edge,left1:edge,right2:edge].(Fork[lf:edge,right1:edge,left1:edge] | Fork[rf:edge,right2:edge,left2:edge]) | $0 -> Philosopher[idle,rf:edge,left1:edge,right2:edge].Fork[rf:edge,right2:edge,left2:edge] | Fork[idle,right1:edge,left1:edge] | $0;
+%rule r_3 Philosopher[idle,rf:edge,left1:edge,right:edge].Fork[rf:edge,right:edge,left2:edge] | $0 -> Philosopher[idle,idle,left1:edge,right:edge] | Fork[idle,right:edge,left2:edge] | $0;
+
+# Model
+%agent a:Philosopher[idle,idle,left1:edge,right1:edge] | b:Philosopher[idle,idle,right5:edge,left5:edge] | c:Philosopher[idle,idle,left2:edge,right2:edge] | d:Philosopher[idle,idle,right4:edge,left4:edge] | e:Philosopher[idle,idle,left3:edge,right3:edge] | f:Fork[idle,left1:edge,right5:edge] | h:Fork[idle,left5:edge,right4:edge] | i:Fork[idle,right2:edge,left3:edge] | j:Fork[idle,left4:edge,right3:edge] | g:Fork[idle,right1:edge,left2:edge];
+
+# Go!
+%check;

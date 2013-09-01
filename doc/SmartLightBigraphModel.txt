@@ -1,0 +1,9 @@
+Zone.Region.Light | Person;
+
+Zone.(Region.Light | Person);
+
+Zone.Region.(Light | Person);
+
+Zone.(Region.Light | Person);
+
+Zone.Region.Light | Person;

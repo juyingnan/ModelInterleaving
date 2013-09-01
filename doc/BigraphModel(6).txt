@@ -1,0 +1,70 @@
+0{
+Hospital.(ChargingRoom.Computer[connected].nil|ConsultingRoom.Computer[connected].nil|Pharmacy.Computer[connected].nil)|Patient[p1,p2].nil;
+Hospital.(ChargingRoom.Computer[connected].nil|ConsultingRoom.Computer[connected].nil|Patient[p1,p2].nil|Pharmacy.Computer[connected].nil);
+Hospital.(ChargingRoom.Computer[connected].nil|ConsultingRoom.(Computer[connected].nil|Patient[p1,p2].nil)|Pharmacy.Computer[connected].nil);
+Hospital.(ChargingRoom.Computer[connected].nil|ConsultingRoom.(Computer[connected].Prescription[patient_prescription].nil|Patient[patient_prescription,p2].nil)|Pharmacy.Computer[connected].nil);
+Hospital.(ChargingRoom.Computer[connected].nil|ConsultingRoom.Computer[connected].Prescription[patient_prescription].nil|Patient[patient_prescription,p2].nil|Pharmacy.Computer[connected].nil);
+Hospital.(ChargingRoom.Computer[connected].nil|ConsultingRoom.Computer[connected].Prescription[patient_prescription].nil|Pharmacy.Computer[connected].nil)|Patient[patient_prescription,p2].nil;
+}14.0%
+1{
+Hospital.(ChargingRoom.Computer[connected].nil|ConsultingRoom.Computer[connected].nil|Pharmacy.Computer[connected].nil)|Patient[p1,p2].nil;
+Hospital.(ChargingRoom.Computer[connected].nil|ConsultingRoom.Computer[connected].nil|Patient[p1,p2].nil|Pharmacy.Computer[connected].nil);
+Hospital.(ChargingRoom.Computer[connected].nil|ConsultingRoom.(Computer[connected].nil|Patient[p1,p2].nil)|Pharmacy.Computer[connected].nil);
+Hospital.(ChargingRoom.Computer[connected].nil|ConsultingRoom.(Computer[connected].Prescription[patient_prescription].nil|Patient[patient_prescription,p2].nil)|Pharmacy.Computer[connected].nil);
+Hospital.(ChargingRoom.Computer[connected].Bill[b1].nil|ConsultingRoom.(Computer[connected].Prescription[patient_prescription].nil|Patient[patient_prescription,p2].nil)|Pharmacy.Computer[connected].nil);
+Hospital.(ChargingRoom.Computer[connected].Bill[b1].nil|ConsultingRoom.Computer[connected].Prescription[patient_prescription].nil|Patient[patient_prescription,p2].nil|Pharmacy.Computer[connected].nil);
+Hospital.(ChargingRoom.Computer[connected].Bill[b1].nil|ConsultingRoom.Computer[connected].Prescription[patient_prescription].nil|Pharmacy.(Computer[connected].nil|Patient[patient_prescription,p2].nil));
+}17.0%
+2{
+Hospital.(ChargingRoom.Computer[connected].nil|ConsultingRoom.Computer[connected].nil|Pharmacy.Computer[connected].nil)|Patient[p1,p2].nil;
+Hospital.(ChargingRoom.Computer[connected].nil|ConsultingRoom.Computer[connected].nil|Patient[p1,p2].nil|Pharmacy.Computer[connected].nil);
+Hospital.(ChargingRoom.Computer[connected].nil|ConsultingRoom.(Computer[connected].nil|Patient[p1,p2].nil)|Pharmacy.Computer[connected].nil);
+Hospital.(ChargingRoom.Computer[connected].nil|ConsultingRoom.(Computer[connected].Prescription[patient_prescription].nil|Patient[patient_prescription,p2].nil)|Pharmacy.Computer[connected].nil);
+Hospital.(ChargingRoom.Computer[connected].nil|ConsultingRoom.Computer[connected].Prescription[patient_prescription].nil|Patient[patient_prescription,p2].nil|Pharmacy.Computer[connected].nil);
+Hospital.(ChargingRoom.(Computer[connected].nil|Patient[patient_prescription,p2].nil)|ConsultingRoom.Computer[connected].Prescription[patient_prescription].nil|Pharmacy.Computer[connected].nil);
+}14.0%
+3{
+Hospital.(ChargingRoom.Computer[connected].nil|ConsultingRoom.Computer[connected].nil|Pharmacy.Computer[connected].nil)|Patient[p1,p2].nil;
+Hospital.(ChargingRoom.Computer[connected].nil|ConsultingRoom.Computer[connected].nil|Patient[p1,p2].nil|Pharmacy.Computer[connected].nil);
+Hospital.(ChargingRoom.Computer[connected].nil|ConsultingRoom.(Computer[connected].nil|Patient[p1,p2].nil)|Pharmacy.Computer[connected].nil);
+Hospital.(ChargingRoom.Computer[connected].nil|ConsultingRoom.(Computer[connected].Prescription[patient_prescription].nil|Patient[patient_prescription,p2].nil)|Pharmacy.Computer[connected].nil);
+Hospital.(ChargingRoom.Computer[connected].Bill[b1].nil|ConsultingRoom.(Computer[connected].Prescription[patient_prescription].nil|Patient[patient_prescription,p2].nil)|Pharmacy.Computer[connected].nil);
+Hospital.(ChargingRoom.Computer[connected].Bill[b1].nil|ConsultingRoom.Computer[connected].Prescription[patient_prescription].nil|Patient[patient_prescription,p2].nil|Pharmacy.Computer[connected].nil);
+Hospital.(ChargingRoom.Computer[connected].Bill[b1].nil|ConsultingRoom.Computer[connected].Prescription[patient_prescription].nil|Pharmacy.Computer[connected].nil)|Patient[patient_prescription,p2].nil;
+}17.0%
+4{
+Hospital.(ChargingRoom.Computer[connected].nil|ConsultingRoom.Computer[connected].nil|Pharmacy.Computer[connected].nil)|Patient[p1,p2].nil;
+Hospital.(ChargingRoom.Computer[connected].nil|ConsultingRoom.Computer[connected].nil|Patient[p1,p2].nil|Pharmacy.Computer[connected].nil);
+Hospital.(ChargingRoom.Computer[connected].nil|ConsultingRoom.(Computer[connected].nil|Patient[p1,p2].nil)|Pharmacy.Computer[connected].nil);
+Hospital.(ChargingRoom.Computer[connected].nil|ConsultingRoom.(Computer[connected].Prescription[patient_prescription].nil|Patient[patient_prescription,p2].nil)|Pharmacy.Computer[connected].nil);
+Hospital.(ChargingRoom.Computer[connected].Bill[b1].nil|ConsultingRoom.(Computer[connected].Prescription[patient_prescription].nil|Patient[patient_prescription,p2].nil)|Pharmacy.Computer[connected].nil);
+Hospital.(ChargingRoom.Computer[connected].Bill[b1].nil|ConsultingRoom.Computer[connected].Prescription[patient_prescription].nil|Patient[patient_prescription,p2].nil|Pharmacy.Computer[connected].nil);
+Hospital.(ChargingRoom.(Computer[connected].Bill[b1].nil|Patient[patient_prescription,p2].nil)|ConsultingRoom.Computer[connected].Prescription[patient_prescription].nil|Pharmacy.Computer[connected].nil);
+Hospital.(ChargingRoom.(Computer[connected].Bill[patient_bill_payed].nil|Patient[patient_prescription,patient_bill_payed].nil)|ConsultingRoom.Computer[connected].Prescription[patient_prescription].nil|Pharmacy.Computer[connected].nil);
+Hospital.(ChargingRoom.(Computer[connected].Bill[patient_bill_payed].nil|Patient[patient_prescription,patient_bill_payed].nil)|ConsultingRoom.Computer[connected].Prescription[patient_prescription].nil|Pharmacy.(Computer[connected].nil|Material.nil));
+}22.0%
+5{
+Hospital.(ChargingRoom.Computer[connected].nil|ConsultingRoom.Computer[connected].nil|Pharmacy.Computer[connected].nil)|Patient[p1,p2].nil;
+Hospital.(ChargingRoom.Computer[connected].nil|ConsultingRoom.Computer[connected].nil|Patient[p1,p2].nil|Pharmacy.Computer[connected].nil);
+Hospital.(ChargingRoom.Computer[connected].nil|ConsultingRoom.(Computer[connected].nil|Patient[p1,p2].nil)|Pharmacy.Computer[connected].nil);
+Hospital.(ChargingRoom.Computer[connected].nil|ConsultingRoom.(Computer[connected].Prescription[patient_prescription].nil|Patient[patient_prescription,p2].nil)|Pharmacy.Computer[connected].nil);
+Hospital.(ChargingRoom.Computer[connected].nil|ConsultingRoom.Computer[connected].Prescription[patient_prescription].nil|Patient[patient_prescription,p2].nil|Pharmacy.Computer[connected].nil);
+Hospital.(ChargingRoom.Computer[connected].nil|ConsultingRoom.Computer[connected].Prescription[patient_prescription].nil|Pharmacy.(Computer[connected].nil|Patient[patient_prescription,p2].nil));
+}14.0%
+6{
+Hospital.(ConsultingRoom.Computer[connected] | ChargingRoom.Computer[connected] | Pharmacy.Computer [connected]) | Patient[o,o];
+Hospital.(ConsultingRoom.Computer[connected] | ChargingRoom.Computer[connected] | Pharmacy.Computer[connected] | Patient[o,o]);
+Hospital.(ConsultingRoom.(Computer[connected] | Patient[o,o]) | ChargingRoom.Computer[connected] | Pharmacy.Computer[connected]);
+Hospital.(ConsultingRoom.(Computer[connected].Prescription[patient_prescription] | Patient[patient_prescription,o]) | ChargingRoom.Computer[connected] | Pharmacy.Computer[connected]);
+Hospital.(ConsultingRoom.(Computer[connected].Prescription[patient_prescription] | Patient[patient_prescription,o]) | ChargingRoom.Computer[connected].Bill[o] | Pharmacy.Computer[connected]);
+Hospital.(ConsultingRoom.Computer[connected].Prescription[patient_prescription] | ChargingRoom.Computer[connected].Bill[o] | Pharmacy.Computer[connected] | Patient[patient_prescription,o]);
+Hospital.(ConsultingRoom.Computer[connected].Prescription[patient_prescription] | ChargingRoom.(Computer[connected].Bill[o] | Patient[patient_prescription,o]) | Pharmacy.Computer[connected]);
+Hospital.(ConsultingRoom.Computer[connected].Prescription[patient_prescription] | ChargingRoom.(Computer[connected].Bill[patient_bill_payed] | Patient[patient_prescription,patient_bill_payed]) | Pharmacy.Computer[connected]);
+Hospital.(ConsultingRoom.Computer[connected].Prescription[patient_prescription] | ChargingRoom.(Computer[connected].Bill[patient_bill_payed] | Patient[patient_prescription,patient_bill_payed]) | Pharmacy.(Computer[connected] | Material[o]));
+Hospital.(ConsultingRoom.Computer[connected].Prescription[patient_prescription] | ChargingRoom.(Computer[connected].Bill[patient_bill_payed] | Patient[patient_prescription,patient_bill_payed]) | Pharmacy.(Computer[connected] | Decoction[o]));
+Hospital.(ConsultingRoom.Computer[connected].Prescription[patient_prescription] | ChargingRoom.Computer[connected].Bill[patient_bill_payed] | Pharmacy.(Computer[connected] | Decoction[o]) | Patient[patient_prescription,patient_bill_payed]);
+Hospital.(ConsultingRoom.Computer[connected].Prescription[patient_prescription] | ChargingRoom.Computer[connected].Bill[patient_bill_payed] | Pharmacy.(Computer[connected] | Patient[patient_prescription,patient_bill_payed] | Decoction[o]));
+Hospital.(ConsultingRoom.Computer[connected].Prescription[o] | ChargingRoom.Computer[connected].Bill[o] | Pharmacy.(Computer[connected] | Patient[patient_decoction,o] | Decoction[patient_decoction]));
+Hospital.(ConsultingRoom.Computer[connected].Prescription[o] | ChargingRoom.Computer[connected].Bill[o] | Pharmacy.Computer[connected] | Patient[patient_decoction,o] | Decoction[patient_decoction]);
+Hospital.(ConsultingRoom.Computer[connected].Prescription[o] | ChargingRoom.Computer[connected].Bill[o] | Pharmacy.Computer[connected]) | Patient[patient_decoction,o] | Decoction[patient_decoction];
+}10%

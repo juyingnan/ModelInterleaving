@@ -1,0 +1,20 @@
+# Controls
+%active Zone : 0;
+%active Region : 0;
+%active Patient : 0;
+%active Light : 0;
+%active Put : 0;
+%active Illum : 0;
+
+# Rules
+%rule r_0 Zone.$0 | Patient | $1 -> Zone.($0 | Patient) | $1;
+%rule r_1 Region.$0 | Patient | $1 -> Region.($0 | Patient) | $1;
+%rule r_2 Light | $0 -> Light | $0;
+%rule r_3 Region.(Patient | $0) | $1 -> Region.$0 | Patient | $1;
+%rule r_4 Zone.(Patient | $0) | $1 -> Zone.$0 | Patient | $1;
+
+# Model
+Zone.Region.Light | Patient;
+
+# Go!
+%check;

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Config name="Configration Information">
+	<ServerIP ip="127.0.0.1"/>
+	<BigraphModel filepath="F:\\workspace\\ModelInterleaving\\doc\\BigraphModel.txt" serverport="4700"/>
+	<BigraphDataModel filepath="F:\\workspace\\ModelInterleaving\\doc\\SmartLightDataModel.xml"/>
+	<EFSMModel filepath="F:\\workspace\\ModelInterleaving\\doc\\EFSMModel.smd.xml"/>
+	<PetrinetModel filepath="F:\\workspace\\ModelInterleaving\\doc\\produceDecoction.xml"/>
+	<ServiceModel filepath="F:\\workspace\\ModelInterleaving\\doc\\ServiceModel.xml" serverport="4800"/>
+	<BGMFile filepath="F:\\workspace\\ModelInterleaving\\doc\\decoction.bgm"/>
+	<SortingConstraint filepath="F:\\workspace\\ModelInterleaving\\doc\\SortingConstraint.xml"/>
+	<RulesInput filepath="F:\\workspace\\ModelInterleaving\\doc\\Rules.xml"/>
+	<PatternsOutput filepath="F:\\workspace\\ModelInterleaving\\doc\\Patterns.xml"/>
+	<TestCaseOutput filepath="F:\\workspace\\ModelInterleaving\\doc\\TestData.txt"/>
+	<TomcatRunPath path = "C:\\Program Files\\Apache Software Foundation\\Tomcat 6.0\\bin"/>
+	<OutputByBigMC filepath="F:\\workspace\\ModelInterleaving\\doc\\testPathByBigMC.txt"/>
+	<DefinePathOutput filepath="F:\\workspace\\ModelInterleaving\\doc\\dPath.txt"/>
+</Config>

@@ -1,0 +1,233 @@
+package interleaving.server;
+
+import java.util.List;
+
+import model.configInfo.ConfigInfo;
+import model.configInfo.parser.ConfigInfoXMLParser;
+import model.service.Service;
+import model.service.ServiceModel;
+import model.service.invokeUtil.ServiceInvokeUtil;
+import model.service.parser.ServicesXMLParser;
+
+public class ServiceServer {
+	private Server serviceServer;
+	private ServiceInvokeUtil serviceInvoker;
+	private ServiceModel serviceModel;	
+	private String currentIndex;
+	private String currentSubIndex;
+	private String currentEndFlag;
+
+	public ServiceServer(){
+		ConfigInfoXMLParser configParser = new ConfigInfoXMLParser();
+		ConfigInfo configInfo = configParser.parserXml();
+		ServicesXMLParser serviceParser = new ServicesXMLParser();
+		this.serviceServer = new Server(configInfo.getServiceServerPort());
+		this.serviceInvoker = new ServiceInvokeUtil();
+		String sfPath = configInfo.getServiceModelFilePath();
+		String petrifPath = configInfo.getPetrinetModelFilePath();
+		this.serviceModel = serviceParser.parserXml(sfPath, petrifPath);
+		this.currentIndex = "0";
+		this.currentSubIndex = "";
+		this.currentEndFlag = "";
+	}
+	
+	private void callRequestProcess(String line){
+		String request = line.substring(5);
+		List<Service> services = this.serviceModel.getServices();
+		String url = "http://" + this.serviceModel.getIp() + this.serviceModel.getPath();
+		String namespace = this.serviceModel.getNamespace();
+		for(int i = 0; i < services.size(); i++){
+			Service service = services.get(i);
+			if(request.contains(service.getName())){
+				String[] paramStr = (request.split("[(]")[1]).split("[)]");
+				String[] params = null;
+				if(paramStr.length > 0){
+					params = ((request.split("[(]")[1]).split("[)]")[0]).split(",");
+				}
+				String response;
+				if(params != null && params.length > 0){
+					response = this.serviceInvoker.invokeService(url + service.getPath(), namespace, service.getFunction(), params[0]);
+				}
+				else{
+					response = this.serviceInvoker.invokeService(url + service.getPath(), namespace, service.getFunction(), "");
+				}
+				System.out.println(response);
+				this.serviceServer.printLine(response);
+				if(!service.getName().equals("checkService")){
+					this.setCurrentIndex(service.getIndex());
+				}
+				if(!service.getSubServices().isEmpty()){
+					this.setCurrentSubIndex("s");
+				}
+			}
+		}
+	}
+	
+	private void currentIndexRequestProcess(String line){
+		if(line.contains(":") && line.split(":")[1].contains("restart")){
+			this.resetCurrentIndex();
+			this.resetCurrentSubIndex();
+			this.serviceServer.printLine("");
+		}
+		else{
+			this.serviceServer.printLine(this.getCurrentIndex() + this.getCurrentSubIndex());
+			if(line.contains(":")){
+				if(line.split(":")[1].contains("reset") && this.getCurrentSubIndex().equals("")){
+					this.resetCurrentIndex();
+				}
+				else if(!line.split(":")[1].contains("reset")){
+					this.setCurrentIndex(line.split(":")[1]);
+				}
+			}
+		}
+	}
+	
+	private void currentSubIndexRequestProcess(String line){
+		this.serviceServer.printLine(this.getCurrentSubIndex());
+		if(line.contains(":")){
+			String param = line.split(":")[1];
+			if(param.contains("reset")){
+				this.resetCurrentSubIndex();
+			}
+			else if(param.contains("Ready")){
+				this.setCurrentSubIndex("s");
+			}
+			else if(param.contains("Finished")){
+				System.out.println("this.getCurrentEndFlag()" + this.getCurrentEndFlag());
+				if(this.getCurrentEndFlag().equals("true")){
+					this.setCurrentSubIndex("e");
+				}
+			}
+			else{
+				Service service = this.serviceModel.findServiceByName(param);
+				if(service != null){
+					this.setCurrentSubIndex(service.getIndex());
+				}
+				else{
+					this.setCurrentSubIndex(param);
+				}
+			}
+		}
+	}
+	
+	private void currentServiceEndFlagRequestProcess(String line){
+		Service service = this.serviceModel.findServiceByIndex(this.getCurrentIndex());
+		if(service != null && service.getEndFlag() != null){
+			this.serviceServer.printLine(service.getEndFlag());
+		}
+		else{
+			this.serviceServer.printLine("Current service has no endFlag!!!");
+		}
+	}
+	
+	private void currentEndFlagRequestProcess(String line){
+		this.serviceServer.printLine(this.getCurrentEndFlag());
+		if(line.contains(":")){
+			if(line.split(":")[1].contains("reset")){
+				this.resetCurrentEndFlag();
+			}
+			else if(!line.split(":")[1].contains("reset")){
+				this.setCurrentEndFlag(line.split(":")[1]);
+			}
+		}
+	}
+	
+	private void wrongFormatResponse(){
+		this.serviceServer.printLine("ServiceServer Request format wrong!!!");
+	}
+	
+	public void serviceServerRun(){
+		this.serviceServer.openServerSocket();
+		String line = this.serviceServer.readLine();
+		if (line.contains("call:")) {
+			System.out.println("Client:" + line);
+		}
+		
+		while (!line.equals("end")) {
+			if(line.contains("call:")){
+				this.callRequestProcess(line);
+			}
+			else if(line.contains("currentIndex")){
+				this.currentIndexRequestProcess(line);
+			}
+			else if(line.contains("currentSubIndex")){
+				this.currentSubIndexRequestProcess(line);
+			}
+			else if(line.contains("currentServiceEndFlag")){
+				this.currentServiceEndFlagRequestProcess(line);
+			}
+			else if(line.contains("currentEndFlag:")){
+				this.currentEndFlagRequestProcess(line);
+			}
+			else{
+				this.wrongFormatResponse();
+			}
+			this.serviceServer.flush();
+			line = this.serviceServer.readLine();
+			if (line.contains("call:")) {
+				System.out.println("Client:" + line);
+			}
+		}		
+		this.serviceServer.closeServerSocket();
+	}
+	
+	public ServiceInvokeUtil getServiceInvoker() {
+		return serviceInvoker;
+	}
+
+	public void setServiceInvoker(ServiceInvokeUtil serviceInvoker) {
+		this.serviceInvoker = serviceInvoker;
+	}
+
+	public ServiceModel getServiceModel() {
+		return serviceModel;
+	}
+
+	public void setServiceModel(ServiceModel serviceModel) {
+		this.serviceModel = serviceModel;
+	}
+
+	public Server getServiceServer() {
+		return serviceServer;
+	}
+
+	public void setServiceServer(Server serviceServer) {
+		this.serviceServer = serviceServer;
+	}
+	
+	public String getCurrentIndex() {
+		return currentIndex;
+	}
+
+	public void setCurrentIndex(String currentIndex) {
+		this.currentIndex = currentIndex;
+	}
+
+	public String getCurrentSubIndex() {
+		return currentSubIndex;
+	}
+
+	public void setCurrentSubIndex(String currentSubIndex) {
+		this.currentSubIndex = currentSubIndex;
+	}
+	
+	public void resetCurrentIndex() {
+		this.currentIndex = "0";
+	}
+	
+	public void resetCurrentSubIndex() {
+		this.currentSubIndex = "";
+	}
+	
+	public String getCurrentEndFlag() {
+		return currentEndFlag;
+	}
+
+	public void setCurrentEndFlag(String currentEndFlag) {
+		this.currentEndFlag = currentEndFlag;
+	}
+	
+	public void resetCurrentEndFlag(){
+		this.currentEndFlag = "";
+	}
+}

@@ -1,0 +1,19 @@
+digraph reaction_graph {
+rankdir = LR;
+
+n1e[label="out"]
+//Patient out of Zone
+ n1e -> n2e[label="r_0",color="red",style="bold"];
+ n1e -> n1e[label="r_2"];
+
+n2e[label="Zone"]
+//Patient in Zone
+ n2e -> n3e[label="r_1",color="red",style="bold"];
+ n2e -> n2e[label="r_2",color="red",style="bold"];
+ n2e -> n1e[label="r_4",color="red",style="bold"];
+
+n3e[label="Region"]
+//Patient in Region
+ n3e -> n3e[label="r_2",color="red",style="bold"];
+ n3e -> n2e[label="r_3",color="red",style="bold"];
+}

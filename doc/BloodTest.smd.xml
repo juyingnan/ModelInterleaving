@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StatesMachines name="EFSMModel">
+            <foregroundColor b="0" g="0" r="0"/>
+            <backgroundColor b="255" g="255" r="255"/>
+            <State name="S0">
+                        <bounds height="45" width="45" x="100" y="70"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S1">
+                        <bounds height="45" width="45" x="500" y="70"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S2">
+                        <bounds height="45" width="45" x="900" y="70"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S3">
+                        <bounds height="45" width="45" x="900" y="200"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S4">
+                        <bounds height="45" width="45" x="500" y="200"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S5">
+                        <bounds height="45" width="45" x="100" y="200"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S6">
+                        <bounds height="45" width="45" x="100" y="330"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S7">
+                        <bounds height="45" width="45" x="500" y="330"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S8">
+                        <bounds height="45" width="45" x="900" y="330"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S9">
+                        <bounds height="45" width="45" x="900" y="460"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S10">
+                        <bounds height="45" width="45" x="500" y="460"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S11">
+                        <bounds height="45" width="45" x="100" y="460"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S12">
+                        <bounds height="45" width="45" x="100" y="590"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S13">
+                        <bounds height="45" width="45" x="500" y="590"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S14">
+                        <bounds height="45" width="45" x="900" y="590"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <Transition name="T0" source="S0" target="S0">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Patient in ChargingRoom">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Patient in ChargingRoom no change">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T1" source="S0" target="S1">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Patient in ChargingRoom">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Patient in ChargingRoom changed">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T2" source="S1" target="S2">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:TestingItems of Patient">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="action">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="bill = call_createBill(TestingItems)">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T3" source="S2" target="S3">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="action">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="put:bill">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T4" source="S3" target="S1">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Bill in ChargingRoom">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Bill in ChargingRoom no change">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T5" source="S3" target="S4">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Bill in ChargingRoom">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Bill in ChargingRoom changed">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T6" source="S4" target="S5">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="action">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="billPayed = call_payBill(bill)">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T7" source="S5" target="S6">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="action">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="put:billPayed">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T8" source="S6" target="S4">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Patient link Bill">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Patient link Bill no change">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T9" source="S6" target="S7">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Patient link Bill">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Patient link Bill changed">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T10" source="S7" target="S7">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Patient in TestingRoom">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Patient in TestingRoom no change">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T11" source="S7" target="S8">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Patient in TestingRoom">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Patient in TestingRoom changed">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T12" source="S8" target="S9">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="action">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="blood = call_takeBlood(Patient)">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T13" source="S9" target="S10">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="action">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="put:blood">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T14" source="S10" target="S8">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Patient link Blood">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Patient link Blood no change">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T15" source="S10" target="S11">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Patient link Blood">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Patient link Blood changed">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T16" source="S11" target="S12">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="action">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="testingResults = call_generateResults(blood,TestingItems)">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T17" source="S12" target="S13">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="action">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="put:testingResults">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T18" source="S13" target="S11">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Patient link TestingResults">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Patient link TestingResults no change">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T19" source="S13" target="S14">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Patient link TestingResults">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Patient link TestingResults changed">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+</StatesMachines>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bigraph:bigraph xmlns:bigraph="http://www.itu.dk/research/pls/xmlns/2010/bigraph">
+  <signature:control xmlns:bigm="http://www.itu.dk/research/pls/xmlns/2010/bigm" bigm:label="greater" kind="atomic" name="Greater" placesort="UserDef:Decision" xmlns:signature="http://www.itu.dk/research/pls/xmlns/2010/signature">
+    <signature:port name="left" portsort="LeftValue:none">
+      <bigm:port-appearance bigm:distance="0.75" bigm:segment="0"/>
+    </signature:port>
+    <signature:port name="right" portsort="RightValue:none">
+      <bigm:port-appearance bigm:distance="0.25" bigm:segment="0"/>
+    </signature:port>
+    <bigm:shape bigm:shape="oval"/>
+    <bigm:appearance bigm:outlineColor="#ff0000"/>
+  </signature:control>
+  <signature:control xmlns:bigm="http://www.itu.dk/research/pls/xmlns/2010/bigm" bigm:label="less" kind="atomic" name="Less" placesort="UserDef:Decision" xmlns:signature="http://www.itu.dk/research/pls/xmlns/2010/signature">
+    <signature:port name="left" portsort="LeftValue:none">
+      <bigm:port-appearance bigm:distance="0.75" bigm:segment="0"/>
+    </signature:port>
+    <signature:port name="right" portsort="RightValue:none">
+      <bigm:port-appearance bigm:distance="0.25" bigm:segment="0"/>
+    </signature:port>
+    <bigm:shape bigm:shape="oval"/>
+    <bigm:appearance bigm:outlineColor="#ff0000"/>
+  </signature:control>
+  <signature:control xmlns:bigm="http://www.itu.dk/research/pls/xmlns/2010/bigm" bigm:label="greaterOrEqual" kind="atomic" name="GreaterOrEqual" placesort="UserDef:Decision" xmlns:signature="http://www.itu.dk/research/pls/xmlns/2010/signature">
+    <signature:port name="left" portsort="LeftValue:none">
+      <bigm:port-appearance bigm:distance="0.75" bigm:segment="0"/>
+    </signature:port>
+    <signature:port name="right" portsort="RightValue:none">
+      <bigm:port-appearance bigm:distance="0.25" bigm:segment="0"/>
+    </signature:port>
+    <bigm:shape bigm:shape="oval"/>
+    <bigm:appearance bigm:outlineColor="#ff0000"/>
+  </signature:control>
+  <signature:control xmlns:bigm="http://www.itu.dk/research/pls/xmlns/2010/bigm" bigm:label="lessOrEqual" kind="atomic" name="LessOrEqual" placesort="UserDef:Decision" xmlns:signature="http://www.itu.dk/research/pls/xmlns/2010/signature">
+    <signature:port name="left" portsort="LeftValue:none">
+      <bigm:port-appearance bigm:distance="0.75" bigm:segment="0"/>
+    </signature:port>
+    <signature:port name="right" portsort="RightValue:none">
+      <bigm:port-appearance bigm:distance="0.25" bigm:segment="0"/>
+    </signature:port>
+    <bigm:shape bigm:shape="oval"/>
+    <bigm:appearance bigm:outlineColor="#ff0000"/>
+  </signature:control>
+  <signature:control xmlns:bigm="http://www.itu.dk/research/pls/xmlns/2010/bigm" bigm:label="equal" kind="atomic" name="Equal" placesort="UserDef:Decision" xmlns:signature="http://www.itu.dk/research/pls/xmlns/2010/signature">
+    <signature:port name="left" portsort="LeftValue:none">
+      <bigm:port-appearance bigm:distance="0.75" bigm:segment="0"/>
+    </signature:port>
+    <signature:port name="right" portsort="RightValue:none">
+      <bigm:port-appearance bigm:distance="0.25" bigm:segment="0"/>
+    </signature:port>
+    <bigm:shape bigm:shape="oval"/>
+    <bigm:appearance bigm:outlineColor="#ff0000"/>
+  </signature:control>
+  <signature:control xmlns:bigm="http://www.itu.dk/research/pls/xmlns/2010/bigm" bigm:label="notEqual" kind="atomic" name="NotEqual" placesort="UserDef:Decision" xmlns:signature="http://www.itu.dk/research/pls/xmlns/2010/signature">
+    <signature:port name="left" portsort="LeftValue:none">
+      <bigm:port-appearance bigm:distance="0.75" bigm:segment="0"/>
+    </signature:port>
+    <signature:port name="right" portsort="RightValue:none">
+      <bigm:port-appearance bigm:distance="0.25" bigm:segment="0"/>
+    </signature:port>
+    <bigm:shape bigm:shape="oval"/>
+    <bigm:appearance bigm:outlineColor="#ff0000"/>
+  </signature:control>
+  <signature:signature xmlns:signature="http://www.itu.dk/research/pls/xmlns/2010/signature">
+    <formationrules:formationrules xmlns:formationrules="http://www.itu.dk/research/pls/xmlns/2013/formationrules">
+      <sortset:sortset xmlns:sortset="http://www.itu.dk/research/pls/xmlns/2013/sortset">
+        <sortset:placesort name="Building"/>
+        <sortset:placesort name="Device"/>
+        <sortset:placesort name="Room"/>
+        <sortset:placesort name="Record"/>
+        <sortset:placesort name="Medicine"/>
+        <sortset:placesort name="Subject"/>
+        <sortset:placesort name="Decision"/>
+        <sortset:placesort name="Class"/>
+        <sortset:placesort name="Attribute"/>
+        <sortset:placesort name="Instance"/>
+        <sortset:linksort name="Object"/>
+        <sortset:linksort name="Payment"/>
+        <sortset:linksort name="Connection"/>
+        <sortset:linksort name="LeftValue"/>
+        <sortset:linksort name="RightValue"/>
+      </sortset:sortset>
+      <formationrules:formationrule constraint="in" name="Room in Building" sort1="Room" sort2="Building" type="Formation Rule for Place Sorting"/>
+      <formationrules:formationrule constraint="in" name="Subject in Building" sort1="Subject" sort2="Building" type="Formation Rule for Place Sorting"/>
+      <formationrules:formationrule constraint="in" name="Medicine in Building" sort1="Medicine" sort2="Building" type="Formation Rule for Place Sorting"/>
+      <formationrules:formationrule constraint="in" name="Device in Room" sort1="Device" sort2="Room" type="Formation Rule for Place Sorting"/>
+      <formationrules:formationrule constraint="in" name="Subject in Room" sort1="Subject" sort2="Room" type="Formation Rule for Place Sorting"/>
+      <formationrules:formationrule constraint="in" name="Medicine in Room" sort1="Medicine" sort2="Room" type="Formation Rule for Place Sorting"/>
+      <formationrules:formationrule constraint="in" name="Record in Device" sort1="Record" sort2="Device" type="Formation Rule for Place Sorting"/>
+      <formationrules:formationrule constraint="link" name="Object link Object" sort1="Object" sort2="Object" type="Formation Rule for Link Sorting"/>
+      <formationrules:formationrule constraint="link" name="Payment link Payment" sort1="Payment" sort2="Payment" type="Formation Rule for Link Sorting"/>
+      <formationrules:formationrule constraint="link" name="Connection link Connection" sort1="Connection" sort2="Connection" type="Formation Rule for Link Sorting"/>
+    </formationrules:formationrules>
+    <signature:control kind="active" name="Patient" placesort="UML_Class">
+      <signature:port name="isDecoction" portsort="none:none"/>
+    </signature:control>
+    <signature:control kind="active" name="isDecoction" placesort="UML_Attribute:boolean">
+      <signature:port name="value_is" portsort="none:none"/>
+      <signature:port name="isDecoction" portsort="none:none"/>
+    </signature:control>
+    <signature:control kind="active" name="Value" placesort="UML_Class">
+      <signature:port name="value_is" portsort="none:none"/>
+    </signature:control>
+  </signature:signature>
+  <bigraph:edge linksort="" name="isDecoction"/>
+  <bigraph:edge linksort="" name="value_is"/>
+  <bigraph:root name="0">
+    <bigraph:node control="Patient" name="P1">
+      <bigraph:port link="isDecoction" name="isDecoction"/>
+      <bigraph:node control="isDecoction" name="attri">
+        <bigraph:port link="value_is" name="value_is"/>
+        <bigraph:port link="isDecoction" name="isDecoction"/>
+        <bigraph:node control="Value" name="true">
+          <bigraph:port link="value_is" name="value_is"/>
+        </bigraph:node>
+      </bigraph:node>
+    </bigraph:node>
+  </bigraph:root>
+</bigraph:bigraph>

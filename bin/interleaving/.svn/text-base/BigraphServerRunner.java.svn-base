@@ -1,0 +1,10 @@
+package interleaving;
+
+import interleaving.server.BigraphServer;
+
+public class BigraphServerRunner {
+	public static void main(String args[]) {
+		BigraphServer bigraphServerUtil = new BigraphServer();
+		bigraphServerUtil.bigraphServerRun();
+	}
+}

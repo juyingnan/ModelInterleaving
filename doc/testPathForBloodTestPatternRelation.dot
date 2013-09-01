@@ -1,0 +1,63 @@
+digraph reaction_graph {
+rankdir = LR;
+
+n1e[label="out",color="green",style="filled"]
+//Patient out of Hospital
+ n1e -> n2e[label="r_0",color="red",style="bold"];
+
+n2e[label="Hospital",color="green",style="filled"]
+//Patient in Hospital
+ n2e -> n3e[label="r_1",color="red",style="bold"];
+ n2e -> n4e[label="r_16"];
+ n2e -> n1e[label="r_22"];
+
+n3e[label="ChaRoom",color="green",style="filled"]
+//Patient in ChargingRoom
+ n3e -> n5e[label="r_2",color="red",style="bold"];
+
+n4e[label="TestRoom"]
+//Patient in TestingRoom
+ n4e -> n2e[label="r_19"];
+
+n5e[label="ChaRoom \n Bill",color="green",style="filled"]
+//Patient in ChargingRoom && Bill in ChargingRoom
+ n5e -> n6e[label="r_3",color="red",style="bold"];
+
+n6e[label="ChaRoom \n linked Bill",color="green",style="filled"]
+//Patient in ChargingRoom && Patient linked Bill
+ n6e -> n8e[label="r_4",color="red",style="bold"];
+
+n8e[label="Hospital \n linked Bill",color="green",style="filled"]
+//Patient in Hospital && Patient linked Bill
+ n8e -> n11e[label="r_5",color="red",style="bold"];
+ n8e -> n6e[label="r_10"];
+ n8e -> n12e[label="r_23"];
+
+n11e[label="TestRoom \n linked Bill",color="green",style="filled"]
+//Patient in TestingRoom && Patient linked Bill
+ n11e -> n13e[label="r_6",color="red",style="bold"];
+
+n12e[label="out \n linked Bill",color="blue",style="filled"]
+//Patient out of Hospital && Patient linked Bill
+
+n13e[label="TestRoom \n linked Blood",color="green",style="filled"]
+//Patient in TestingRoom && Patient linked Blood
+ n13e -> n14e[label="r_7",color="red",style="bold"];
+
+n14e[label="TestRoom \n with result",color="green",style="filled"]
+//Patient in TestingRoom && Patient with TestingResults
+ n14e -> n16e[label="r_8",color="red",style="bold"];
+
+n16e[label="Hospital \n with result",color="green",style="filled"]
+//Patient in Hospital && Patient with TestingResults
+ n16e -> n19e[label="r_9",color="red",style="bold"];
+ n16e -> n20e[label="r_12"];
+ n16e -> n14e[label="r_18"];
+
+n19e[label="out \n with result",color="green",style="filled"]
+//Patient out of Hospital && Patient with TestingResults
+
+n20e[label="ChaRoom \n with result"]
+//Patient in ChargingRoom && Patient with TestingResults
+ n20e -> n16e[label="r_15"];
+}

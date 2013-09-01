@@ -1,0 +1,337 @@
+package model.efsm;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+public class EFSMModel
+{
+	protected State[]					states;
+	protected Transition[]				trans;
+	protected HashMap<String, String>	data	= new HashMap<String, String>();
+
+	public EFSMModel()
+	{
+	}
+
+	public EFSMModel(int stateNum, int tranNum)
+	{
+		this.states = new State[stateNum];
+		this.trans = new Transition[tranNum];
+	}
+
+	public ArrayList<ArrayList<State>> getCyclesOnPath(ArrayList<State> path, List<ArrayList<State>> cycleList)
+	{
+		ArrayList<ArrayList<State>> cyclesOnPath = new ArrayList<ArrayList<State>>();
+		boolean cycleOnPath = true;
+		for (ArrayList<State> cycle : cycleList)
+		{
+			for (State s : cycle)
+			{
+				if (!path.contains(s))
+				{
+					cycleOnPath = false;
+					break;
+				}
+			}
+			if (cycleOnPath)
+			{
+				cyclesOnPath.add(cycle);
+			}
+		}
+		return cyclesOnPath;
+	}
+
+	public ArrayList<Transition> getTransOnPath(List<State> path)
+	{
+		ArrayList<Transition> transOnPath = new ArrayList<Transition>();
+		for (int i = 0; i < path.size() - 1; i++)
+		{
+			int initial = path.get(i).getIndex();
+			int next = path.get(i + 1).getIndex();
+			for (Transition t : path.get(i).getTransitions())
+			{
+				if (t.getInitial() == initial && t.getNext() == next)
+				{
+					transOnPath.add(t);
+					break;
+				}
+			}
+		}
+		return transOnPath;
+	}
+
+	public ArrayList<String> getGuardByTransition(Transition t)
+	{
+		ArrayList<String> conds = new ArrayList<String>();
+		String guard = t.getGuard();
+		if (guard != null)
+		{
+			if (guard.contains("&&"))
+			{
+				String[] conditions = guard.split("&&");
+				for (String condition : conditions)
+				{
+					conds.add(condition.trim());
+				}
+			}
+			else
+			{
+				conds.add(guard);
+			}
+		}
+		else
+		{
+			conds.add("no guard");
+		}
+		return conds;
+	}
+
+	public String normalizeGuard(String guard)
+	{
+		if(guard.contains("no change")){
+			guard = guard.replaceAll("no change", "").trim();
+		}else{
+			guard = guard.replaceAll("change", "").trim();
+		}
+		if (guard.contains("=="))
+		{
+			guard = guard.split("==")[0].trim();
+		}
+		else if (guard.contains("!="))
+		{
+			guard = guard.split("!=")[0].trim();
+		}
+		else if (guard.contains(">="))
+		{
+			guard = guard.split(">=")[0].trim();
+		}
+		else if (guard.contains("<="))
+		{
+			guard = guard.split("<=")[0].trim();
+		}
+		else if (guard.contains(">"))
+		{
+			guard = guard.split(">")[0].trim();
+		}
+		else if (guard.contains("<"))
+		{
+			guard = guard.split("<")[0].trim();
+		}
+		return guard;
+	}
+
+	/**
+	 * to get guards of each transition on path with its value to get the
+	 * transition go for example, guards of T22: isDone == true && Patient in
+	 * Hospital changed will be guardsWithValueT(isDone:true;Patient in
+	 * Hospital:true)
+	 * 
+	 * @param path
+	 * @return guardsWithValueOnPath
+	 */
+	public ArrayList<ArrayList<String>> getTransDataOnPath(List<State> path)
+	{
+		// transitions on path input
+		ArrayList<Transition> transOnPath = getTransOnPath(path);
+		// guard(s) with its value on each transition in a sub list of
+		// guardsWithValueOnPath
+		ArrayList<ArrayList<String>> guardsWithValueOnPath = new ArrayList<ArrayList<String>>();
+
+		for (Transition t : transOnPath)
+		{
+			// guard(s) on each transition
+			ArrayList<String> guardsT = getGuardByTransition(t);
+			// guard(s) with its value on each transition
+			ArrayList<String> guardsWithValueT = new ArrayList<String>();
+			if (!(guardsT.size() == 1 && guardsT.contains("no guard")))
+			{
+				// System.out.print("transition {");
+				for (String g : guardsT)
+				{
+					// String ele = "";
+					if (g.contains("no change"))
+					{
+						// ele = normalizeGuard(g) + ":" + "false";
+						guardsWithValueT.add(normalizeGuard(g) + ":" + "false");
+					}
+					else if (g.contains("change"))
+					{
+						// ele = normalizeGuard(g) + ":" + "true";
+						guardsWithValueT.add(normalizeGuard(g) + ":" + "true");
+					}
+					else if (g.contains("== true"))
+					{
+						// ele = normalizeGuard(g) + ":" + "true";
+						guardsWithValueT.add(normalizeGuard(g) + ":" + "true");
+					}
+					else if (g.contains("== false"))
+					{
+						// ele = normalizeGuard(g) + ":" + "false";
+						guardsWithValueT.add(normalizeGuard(g) + ":" + "false");
+					}
+					// System.out.print("guard : " + ele + " ");
+				}
+				// System.out.print("}\n");
+			}
+			guardsWithValueOnPath.add(guardsWithValueT);
+		}
+		return guardsWithValueOnPath;
+	}
+
+	public void initDataByTransition(Transition tran)
+	{
+		this.input(tran.getInput());
+		this.action(tran.getAction());
+	}
+
+	private void input(String input)
+	{
+		if (input == null)
+		{
+			return;
+		}
+		else if (input.contains(" && "))
+		{
+			String[] inputs = input.split(" && ");
+			for (int i = 0; i < inputs.length; i++)
+			{
+				subInput(inputs[i]);
+			}
+		}
+		else
+		{
+			subInput(input);
+		}
+	}
+
+	private void subInput(String input)
+	{
+		if (input.startsWith("get:"))
+		{
+			String subInput = input.substring(4);
+			this.addData(subInput, "");
+		}
+		else
+		{
+			System.out.println("Wrong input format!!!");
+		}
+	}
+
+	private void action(String action)
+	{
+		if (action == null)
+		{
+			return;
+		}
+		else if (action.contains(" && "))
+		{
+			String[] actions = action.split(" && ");
+			for (int i = 0; i < actions.length; i++)
+			{
+				subAction(actions[i]);
+			}
+		}
+		else
+		{
+			subAction(action);
+		}
+	}
+
+	private void subAction(String action)
+	{
+		if (action.contains(" = "))
+		{
+			String[] actionParts = action.split(" = ");
+			if (actionParts.length == 2)
+			{
+				this.addData(actionParts[0], "");
+			}
+			else
+			{
+				System.out.println("Wrong action format!!!");
+			}
+		}
+		else if (action.contains("put:"))
+		{
+		}
+		else
+		{
+			System.out.println("Wrong action format!!!");
+		}
+	}
+
+	public HashMap<String, String> getData()
+	{
+		return data;
+	}
+
+	public void setData(HashMap<String, String> data)
+	{
+		this.data = data;
+	}
+
+	public void addData(String key, String value)
+	{
+		this.data.put(key, value);
+	}
+
+	public State[] getStates()
+	{
+		return states;
+	}
+
+	public void setStates(State[] states)
+	{
+		this.states = states;
+	}
+
+	public void addState(State state)
+	{
+		this.states[state.getIndex()] = state;
+	}
+
+	public Transition[] getTrans()
+	{
+		return trans;
+	}
+
+	public void setTrans(Transition[] trans)
+	{
+		this.trans = trans;
+	}
+
+	public void addTran(Transition tran, int index)
+	{
+		this.trans[index] = tran;
+	}
+
+	public void printEFSMModel()
+	{
+		System.out.println("**********************EFSMModel***********************");
+		System.out.println("*************State***************");
+		for (State state : this.states)
+		{
+			state.printState();
+		}
+		System.out.println("***********Transition************");
+		for (Transition tran : this.trans)
+		{
+			tran.printTransition();
+		}
+	}
+
+	public void initStates()
+	{
+		for (int i = 0; i < this.states.length; i++)
+		{
+			for (int j = 0; j < this.trans.length; j++)
+			{
+				if ((this.trans)[j].getInitial() == (this.states)[i].getIndex())
+				{
+					(this.states)[i].addTransition((this.trans)[j]);
+				}
+			}
+		}
+	}
+}

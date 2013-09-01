@@ -1,0 +1,175 @@
+package interleaving.client;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
+
+import model.configInfo.ConfigInfo;
+import model.configInfo.parser.ConfigInfoXMLParser;
+import model.efsm.EFSMModel;
+import model.efsm.State;
+import model.efsm.Transition;
+import model.efsm.parser.EFSMXMLParser;
+import interleaving.client.Client;
+import interleaving.client.util.TransitionUtil;
+
+public class EFSMModelClients {
+	private EFSMModel efsmModel;
+	private TransitionUtil tranUtil;
+	private Client bigraphClient;
+	private Client serviceClient;
+	
+	public EFSMModelClients(){
+		ConfigInfoXMLParser configParser = new ConfigInfoXMLParser();
+		ConfigInfo configInfo = configParser.parserXml();
+		EFSMXMLParser efsmParser = new EFSMXMLParser();
+		String efPath = configInfo.getEFSMModelFilePath();
+		this.efsmModel = efsmParser.parserXml(efPath);
+		this.efsmModel.initStates();
+		this.tranUtil = new TransitionUtil(this.efsmModel.getData());
+		String ip = configInfo.getServerIP();
+		this.bigraphClient = new Client(ip, configInfo.getBigraphServerPort());
+		this.serviceClient = new Client(ip, configInfo.getServiceServerPort());
+	}
+	
+	public void EFSMModelClientsRun(){
+		File file = new File("E:\\bigred-workspace\\big-red-master\\plugins\\dk.itu.big_red\\resources\\doc\\modelinterleaving.txt");
+		if(file.exists()){
+			file.delete();
+		}
+		try {
+			file.createNewFile();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		FileOutputStream fos = null;  
+		try {
+			fos = new FileOutputStream(file);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		PrintWriter out = new PrintWriter(fos);
+		out.flush();	
+		
+		this.bigraphClient.openSocket();
+		this.serviceClient.openSocket();
+		String maxCM = this.bigraphClient.communicate("contextModelNumber");
+		for(int p = 0; p < Integer.parseInt(maxCM); p++){
+			System.out.print(p + ":START->");
+			out.print(p + ":START->");
+			out.flush();
+			int currentM = 0;
+			State[] states = this.efsmModel.getStates();
+			String maxC = this.bigraphClient.communicate("contextNumber");
+			this.serviceClient.communicate("currentIndex:restart");
+			for(int i = 0; i < 50; i++){
+				String preC = this.bigraphClient.communicate("currentIndex");
+				String preS = this.serviceClient.communicate("currentIndex:reset");
+				int preM = currentM;
+				System.out.print("(C" + preC + ",M" + currentM + ",S" + preS + ")->");
+				out.print("(C" + preC + ",M" + currentM + ",S" + preS + ")->");
+				out.flush();
+				if(preC.equals(maxC)){
+					break;
+				}
+				if(currentM == (states.length - 1) && preC.equals(maxC)){
+					break;
+				}
+				List<Transition> nextTs = states[currentM].getTransitions();
+				boolean transFlag = false;
+				String currentSubIndex;
+				for(int j = 0; j < nextTs.size(); j++){
+					currentSubIndex = this.serviceClient.communicate("currentSubIndex");
+					boolean canTransite = this.tranUtil.canTransite(nextTs.get(j), this.bigraphClient, this.serviceClient);
+					if(canTransite){
+						transFlag = true;
+						currentM = nextTs.get(j).getNext();
+						this.efsmModel.setData(this.tranUtil.getData());
+						continue;
+					}
+					else if("".equals(currentSubIndex)){
+						this.serviceClient.communicate("currentSubIndex:reset");
+						this.serviceClient.communicate("currentIndex:reset");
+					}
+				}
+				String currentC = this.bigraphClient.communicate("currentIndex");
+				String currentS = this.serviceClient.communicate("currentIndex:reset");
+				if(!preS.equals(currentS) && transFlag){
+					System.out.print("(C" + preC + ",M" + preM + ",S" + currentS + ")->");
+					out.print("(C" + preC + ",M" + preM + ",S" + currentS + ")->");
+					out.flush();
+				}
+				if(!preC.equals(currentC) && transFlag){
+					System.out.print("(C" + currentC + ",M" + preM + ",S" + currentS + ")->");
+					out.print("(C" + currentC + ",M" + preM + ",S" + currentS + ")->");
+					out.flush();
+				}
+				currentSubIndex = this.serviceClient.communicate("currentSubIndex");
+				if(preM == currentM){
+					if("".equals(currentSubIndex)){
+						this.bigraphClient.communicate("continue");
+					}
+					else{
+						String endFlagRequest = this.serviceClient.communicate("currentServiceEndFlag");
+						if(!endFlagRequest.contains("no endFlag") && !endFlagRequest.equals("")){
+							String endResponse = this.bigraphClient.communicate(endFlagRequest);
+							boolean endFlag = tranUtil.validateResponse(endResponse);
+							this.serviceClient.communicate("currentEndFlag:" + endFlag);
+							if(!endFlag){
+								this.bigraphClient.communicate("continue");
+							}
+						}
+					}
+				}
+				if("e".equals(currentSubIndex)){
+					this.serviceClient.communicate("currentSubIndex:reset");
+					this.serviceClient.communicate("currentIndex:reset");
+				}
+			}
+			System.out.println("END");
+			out.println("END");
+			out.flush();
+			this.bigraphClient.communicate("next");
+		}
+		out.close();
+		this.bigraphClient.communicate("end");
+		this.serviceClient.communicate("end");
+		this.bigraphClient.closeSocket();
+		this.serviceClient.closeSocket();
+	}
+
+	public EFSMModel getEfsmModel() {
+		return efsmModel;
+	}
+
+	public void setEfsmModel(EFSMModel efsmModel) {
+		this.efsmModel = efsmModel;
+	}
+
+	public TransitionUtil getTranUtil() {
+		return tranUtil;
+	}
+
+	public void setTranUtil(TransitionUtil tranUtil) {
+		this.tranUtil = tranUtil;
+	}
+
+	public Client getBigraphClient() {
+		return bigraphClient;
+	}
+
+	public void setBigraphClient(Client bigraphClient) {
+		this.bigraphClient = bigraphClient;
+	}
+
+	public Client getServiceClient() {
+		return serviceClient;
+	}
+
+	public void setServiceClient(Client serviceClient) {
+		this.serviceClient = serviceClient;
+	}
+}

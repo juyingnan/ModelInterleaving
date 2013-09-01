@@ -1,0 +1,245 @@
+digraph reaction_graph {
+rankdir = LR;
+
+n1e[label="out"]
+//Patient out of Zone
+ n1e -> n2e[label="r_0"];
+ n1e -> n3e[label="r_0"];
+ n1e -> n4e[label="r_0"];
+ n1e -> n5e[label="r_0"];
+ n1e -> n6e[label="r_0"];
+ n1e -> n7e[label="r_0"];
+ n1e -> n1e[label="r_3"];
+
+n2e[label="Z1 P1"]
+//Patient1 in Zone1
+ n2e -> n8e[label="r_0"];
+ n2e -> n9e[label="r_0"];
+ n2e -> n10e[label="r_0"];
+ n2e -> n11e[label="r_0"];
+ n2e -> n2e[label="r_1"];
+ n2e -> n2e[label="r_2"];
+ n2e -> n1e[label="r_4"];
+
+n3e[label="Z2 P1"]
+//Patient1 in Zone2
+ n3e -> n12e[label="r_0"];
+ n3e -> n13e[label="r_0"];
+ n3e -> n14e[label="r_0"];
+ n3e -> n15e[label="r_0"];
+ n3e -> n3e[label="r_1"];
+ n3e -> n3e[label="r_2"];
+ n3e -> n1e[label="r_4"];
+
+n4e[label="Z1 P2"]
+//Patient2 in Zone1
+ n4e -> n8e[label="r_0"];
+ n4e -> n16e[label="r_0"];
+ n4e -> n14e[label="r_0"];
+ n4e -> n17e[label="r_0"];
+ n4e -> n4e[label="r_1"];
+ n4e -> n4e[label="r_2"];
+ n4e -> n1e[label="r_4"];
+
+n5e[label="Z2 P2"]
+//Patient2 in Zone2
+ n5e -> n12e[label="r_0"];
+ n5e -> n18e[label="r_0"];
+ n5e -> n10e[label="r_0"];
+ n5e -> n19e[label="r_0"];
+ n5e -> n5e[label="r_1"];
+ n5e -> n5e[label="r_2"];
+ n5e -> n1e[label="r_4"];
+
+n6e[label="Z1 P3"]
+//Patient3 in Zone1
+ n6e -> n9e[label="r_0"];
+ n6e -> n16e[label="r_0"];
+ n6e -> n15e[label="r_0"];
+ n6e -> n19e[label="r_0"];
+ n6e -> n6e[label="r_1"];
+ n6e -> n6e[label="r_2"];
+ n6e -> n1e[label="r_4"];
+
+n7e[label="Z2 P3"]
+//Patient3 in Zone2
+ n7e -> n13e[label="r_0"];
+ n7e -> n18e[label="r_0"];
+ n7e -> n11e[label="r_0"];
+ n7e -> n17e[label="r_0"];
+ n7e -> n7e[label="r_1"];
+ n7e -> n7e[label="r_2"];
+ n7e -> n1e[label="r_4"];
+
+n8e[label="Z1 P1P2"]
+//Patient1 Patient2 in Zone1
+ n8e -> n20e[label="r_0"];
+ n8e -> n21e[label="r_0"];
+ n8e -> n8e[label="r_1"];
+ n8e -> n8e[label="r_2"];
+ n8e -> n2e[label="r_4"];
+ n8e -> n4e[label="r_4"];
+
+n9e[label="Z1 P1P3"]
+//Patient1 Patient3 in Zone1
+ n9e -> n20e[label="r_0"];
+ n9e -> n22e[label="r_0"];
+ n9e -> n9e[label="r_1"];
+ n9e -> n9e[label="r_2"];
+ n9e -> n2e[label="r_4"];
+ n9e -> n6e[label="r_4"];
+
+n10e[label="Z1 P1\nZ2 P2"]
+//Patient1 in Zone1 && Patient2 in Zone2
+ n10e -> n22e[label="r_0"];
+ n10e -> n23e[label="r_0"];
+ n10e -> n10e[label="r_1"];
+ n10e -> n10e[label="r_2"];
+ n10e -> n2e[label="r_4"];
+ n10e -> n5e[label="r_4"];
+
+n11e[label="Z1 P1\nZ2 P3"]
+//Patient1 in Zone1 && Patient3 in Zone2
+ n11e -> n21e[label="r_0"];
+ n11e -> n23e[label="r_0"];
+ n11e -> n11e[label="r_1"];
+ n11e -> n11e[label="r_2"];
+ n11e -> n2e[label="r_4"];
+ n11e -> n7e[label="r_4"];
+
+n12e[label="Z2 P1P2"]
+//Patient1 Patient2 in Zone2
+ n12e -> n24e[label="r_0"];
+ n12e -> n25e[label="r_0"];
+ n12e -> n12e[label="r_1"];
+ n12e -> n12e[label="r_2"];
+ n12e -> n3e[label="r_4"];
+ n12e -> n5e[label="r_4"];
+
+n13e[label="Z2 P1P3"]
+//Patient1 Patient3 in Zone2
+ n13e -> n26e[label="r_0"];
+ n13e -> n25e[label="r_0"];
+ n13e -> n13e[label="r_1"];
+ n13e -> n13e[label="r_2"];
+ n13e -> n3e[label="r_4"];
+ n13e -> n7e[label="r_4"];
+
+n14e[label="Z1 P2\nZ2 P1"]
+//Patient2 in Zone1 && Patient1 in Zone2
+ n14e -> n27e[label="r_0"];
+ n14e -> n26e[label="r_0"];
+ n14e -> n14e[label="r_1"];
+ n14e -> n14e[label="r_2"];
+ n14e -> n3e[label="r_4"];
+ n14e -> n4e[label="r_4"];
+
+n15e[label="Z1 P3\nZ2 P1"]
+//Patient3 in Zone1 && Patient1 in Zone2
+ n15e -> n27e[label="r_0"];
+ n15e -> n24e[label="r_0"];
+ n15e -> n15e[label="r_1"];
+ n15e -> n15e[label="r_2"];
+ n15e -> n3e[label="r_4"];
+ n15e -> n6e[label="r_4"];
+
+n16e[label="Z1 P2P3"]
+//Patient2 Patient3 in Zone1
+ n16e -> n20e[label="r_0"];
+ n16e -> n27e[label="r_0"];
+ n16e -> n16e[label="r_1"];
+ n16e -> n16e[label="r_2"];
+ n16e -> n4e[label="r_4"];
+ n16e -> n6e[label="r_4"];
+
+n17e[label="Z1 P2\nZ2 P3"]
+//Patient2 in Zone1 && Patient3 in Zone2
+ n17e -> n21e[label="r_0"];
+ n17e -> n26e[label="r_0"];
+ n17e -> n17e[label="r_1"];
+ n17e -> n17e[label="r_2"];
+ n17e -> n4e[label="r_4"];
+ n17e -> n7e[label="r_4"];
+
+n18e[label="Z2 P2P3"]
+//Patient2 Patient3 in Zone2
+ n18e -> n23e[label="r_0"];
+ n18e -> n25e[label="r_0"];
+ n18e -> n18e[label="r_1"];
+ n18e -> n18e[label="r_2"];
+ n18e -> n5e[label="r_4"];
+ n18e -> n7e[label="r_4"];
+
+n19e[label="Z1 P3\nZ2 P2"]
+//Patient3 in Zone1 && Patient2 in Zone2
+ n19e -> n22e[label="r_0"];
+ n19e -> n24e[label="r_0"];
+ n19e -> n19e[label="r_1"];
+ n19e -> n19e[label="r_2"];
+ n19e -> n5e[label="r_4"];
+ n19e -> n6e[label="r_4"];
+
+n20e[label="Z1 P1P2P3"]
+//Patient1 Patient2 Patient3 in Zone1
+ n20e -> n20e[label="r_1"];
+ n20e -> n20e[label="r_2"];
+ n20e -> n8e[label="r_4"];
+ n20e -> n9e[label="r_4"];
+ n20e -> n16e[label="r_4"];
+
+n21e[label="Z1 P1P2\nZ2 P3"]
+//Patient1 Patient2 in Zone1 && Patient3 in Zone2
+ n21e -> n21e[label="r_1"];
+ n21e -> n21e[label="r_2"];
+ n21e -> n8e[label="r_4"];
+ n21e -> n11e[label="r_4"];
+ n21e -> n17e[label="r_4"];
+
+n22e[label="Z1 P1P3\nZ2 P2"]
+//Patient1 Patient3 in Zone1 && Patient2 in Zone2
+ n22e -> n22e[label="r_1"];
+ n22e -> n22e[label="r_2"];
+ n22e -> n9e[label="r_4"];
+ n22e -> n10e[label="r_4"];
+ n22e -> n19e[label="r_4"];
+
+n23e[label="Z1 P1\nZ2 P2P3"]
+//Patient1 in Zone1 && Patient2 Patient3 in Zone2
+ n23e -> n23e[label="r_1"];
+ n23e -> n23e[label="r_2"];
+ n23e -> n10e[label="r_4"];
+ n23e -> n11e[label="r_4"];
+ n23e -> n18e[label="r_4"];
+
+n24e[label="Z1 P3\nZ2 P1P2"]
+//Patient3 in Zone1 && Patient1 Patient2 in Zone2
+ n24e -> n24e[label="r_1"];
+ n24e -> n24e[label="r_2"];
+ n24e -> n12e[label="r_4"];
+ n24e -> n15e[label="r_4"];
+ n24e -> n19e[label="r_4"];
+
+n25e[label="Z2 P1P2P3"]
+//Patient1 Patient2 Patient3 in Zone2
+ n25e -> n25e[label="r_1"];
+ n25e -> n25e[label="r_2"];
+ n25e -> n12e[label="r_4"];
+ n25e -> n13e[label="r_4"];
+ n25e -> n18e[label="r_4"];
+
+n26e[label="Z1 P2\nZ2 P1P3"]
+//Patient2 in Zone1 && Patient1 Patient3 in Zone2
+ n26e -> n26e[label="r_1"];
+ n26e -> n26e[label="r_2"];
+ n26e -> n13e[label="r_4"];
+ n26e -> n14e[label="r_4"];
+ n26e -> n17e[label="r_4"];
+
+n27e[label="Z1 P2P3\nZ2 P1"]
+//Patient2 Patient3 in Zone1 && Patient1 in Zone2
+ n27e -> n27e[label="r_1"];
+ n27e -> n27e[label="r_2"];
+ n27e -> n14e[label="r_4"];
+ n27e -> n15e[label="r_4"];
+ n27e -> n16e[label="r_4"];
+}

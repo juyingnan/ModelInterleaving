@@ -1,0 +1,1205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StatesMachines name="Untitled">
+            <foregroundColor b="0" g="0" r="0"/>
+            <backgroundColor b="255" g="255" r="255"/>
+            <State name="S0">
+                        <bounds height="45" width="44" x="-88" y="56"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S1">
+                        <bounds height="42" width="43" x="273" y="62"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S2">
+                        <bounds height="40" width="41" x="750" y="26"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S3">
+                        <bounds height="40" width="43" x="985" y="119"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S4">
+                        <bounds height="40" width="45" x="1105" y="225"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S5">
+                        <bounds height="45" width="45" x="742" y="216"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S6">
+                        <bounds height="45" width="45" x="494" y="140"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S7">
+                        <bounds height="45" width="45" x="210" y="162"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S8">
+                        <bounds height="45" width="45" x="-129" y="167"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S9">
+                        <bounds height="45" width="45" x="95" y="281"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S10">
+                        <bounds height="45" width="45" x="129" y="398"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S11">
+                        <bounds height="45" width="45" x="571" y="336"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S12">
+                        <bounds height="45" width="45" x="927" y="353"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S13">
+                        <bounds height="45" width="45" x="1128" y="462"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S14">
+                        <bounds height="45" width="45" x="600" y="512"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S15">
+                        <bounds height="45" width="45" x="505" y="378"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S16">
+                        <bounds height="45" width="45" x="252" y="517"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S17">
+                        <bounds height="45" width="45" x="-108" y="425"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S18">
+                        <bounds height="45" width="45" x="-90" y="587"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S19">
+                        <bounds height="45" width="45" x="340" y="643"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S20">
+                        <bounds height="45" width="45" x="704" y="613"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S21">
+                        <bounds height="45" width="45" x="1038" y="715"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S22">
+                        <bounds height="45" width="45" x="740" y="838"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S24">
+                        <bounds height="45" width="45" x="168" y="673"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S25">
+                        <bounds height="45" width="51" x="261" y="876"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S26">
+                        <bounds height="45" width="45" x="-92" y="779"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S27">
+                        <bounds height="45" width="45" x="-30" y="928"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S28">
+                        <bounds height="45" width="45" x="109" y="1054"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S29">
+                        <bounds height="45" width="45" x="371" y="972"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S30">
+                        <bounds height="45" width="45" x="682" y="940"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S31">
+                        <bounds height="45" width="45" x="1054" y="996"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S32">
+                        <bounds height="45" width="45" x="696" y="1152"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S33">
+                        <bounds height="45" width="45" x="485" y="1044"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S34">
+                        <bounds height="45" width="45" x="218" y="1147"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S23">
+                        <bounds height="45" width="45" x="494" y="744"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S35">
+                        <bounds height="45" width="45" x="1291" y="362"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <Transition name="T0" source="S0" target="S1">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Passenger in CheckIn">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Passenger in CheckIn change">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T28" source="S0" target="S0">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Passenger in CheckIn">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Passenger in CheckIn no change">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T1" source="S1" target="S2">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="action">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="checkIn = call_checkInEntryNotice(passengerTelephoneNumber)">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T50" source="S1" target="S0">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Passenger in Airport">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Passenger in Airport change">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T2" source="S2" target="S3">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="action">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="put:checkIn">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T3" source="S3" target="S1">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Passenger link CheckIn">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Passenger link CheckIn no change">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T4" source="S3" target="S4">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Passenger link CheckIn">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Passenger link CheckIn change">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T5" source="S4" target="S5">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Passenger in CheckInTable">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Passenger in CheckInTable change">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T44" source="S4" target="S4">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Passenger in CheckinTable">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Passenger in CheckInTable no change">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T51" source="S4" target="S35">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Passenger in Airport">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Passenger in Airport change">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T6" source="S5" target="S6">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="action">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="boading = call_getBoardingPass(passengerID)">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T7" source="S6" target="S7">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="action">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="put:boading">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T8" source="S7" target="S5">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Passenger link CheckInTable">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Passenger link CheckInTable no change">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T9" source="S7" target="S8">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Passenger link CheckInTable">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Passenger link CheckInTable change">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T10" source="S8" target="S9">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Passenger in Security">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Passenger in Security change">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T45" source="S8" target="S8">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Passenger in Security">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Passenger in Security no change">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T52" source="S8" target="S35">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Passenger in Airport">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Passenger in Airport change">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T11" source="S9" target="S10">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="action">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="compareResult = call_passengerInfoCompare(ID,name,flightNumber,seat,ender)">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T12" source="S10" target="S11">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="action">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="put:compareResult">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T13" source="S11" target="S9">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Passenger link Security">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Passenger link Security no change">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T14" source="S11" target="S12">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Passenger link Security">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Passenger link Security change">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T15" source="S12" target="S13">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Passenger next position">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Passenger next position == shop">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T46" source="S12" target="S12">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Passenger in Passengerway">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Passenger in Passengerway no change">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T53" source="S12" target="S35">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Passenger in Airport">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Passenger in Airport change">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T56" source="S12" target="S30">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Passenger next position">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Passenger next position == GateLounge">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T16" source="S13" target="S14">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:currentLuminance">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="action">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="light = call_luminanceAdjust(currentLuminance, passengerTelephoneNumber)">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T17" source="S14" target="S15">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="action">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="put:light">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T18" source="S15" target="S13">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Passenger link light">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Passenger link light no change">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T19" source="S15" target="S16">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Passenger link light">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Passenger link light change">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T20" source="S16" target="S17">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="action">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="ad = call_advertisementSelect(passengerTelephoneNumber)">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T21" source="S17" target="S18">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="action">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="put:ad">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T22" source="S18" target="S16">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Passenger link ad">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Passenger link ad no change">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T23" source="S18" target="S19">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Passenger link ad">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Passenger link ad change">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T24" source="S19" target="S20">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Passenger in ShoppingZone">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Passenger in ShoppingZone change">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T47" source="S19" target="S19">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Passenger in ShoppingZone">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Passenger in ShoppingZone no change">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T54" source="S19" target="S35">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Passenger in Airport">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Passenger in Airport change">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T25" source="S20" target="S21">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="action">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="ShoppingZone = call_shoppingRecommendation(passengerTelephoneNumber)">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T26" source="S21" target="S22">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="action">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="put:ShoppingZone">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T27" source="S22" target="S20">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Passenger link ShoppingZone">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Passenger link ShoppingZone no change">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T42" source="S22" target="S23">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Passenger link ShoppingZone">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Passenger link ShoppingZone change">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T29" source="S24" target="S25">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:currentLuminance">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="action">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="light = call_luminanceAdjust(currentLuminance, passengerTelephoneNumber)">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T30" source="S25" target="S26">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="action">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="put:light">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T31" source="S26" target="S27">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Passenger link light">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Passenger link light change">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T32" source="S26" target="S24">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Passenger link light">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Passenger link light no change">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T33" source="S27" target="S28">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="action">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="ad = call_advertisementSelect(passengerTelephoneNumber)">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T34" source="S28" target="S29">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="action">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="put:ad">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T35" source="S29" target="S27">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Passenger link ad">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Passenger link ad no change">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T36" source="S29" target="S30">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Passenger link ad">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Passenger link ad change">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T37" source="S30" target="S31">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Passenger in GateLounge">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Passenger in GateLounge change">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T49" source="S30" target="S30">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Passenger in GateLounge">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Passenger in GateLounge no change">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T38" source="S31" target="S32">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:currentFlight">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="action">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="boading = call_boardingPassCompare(passengerFlightNumber,currentFlight)">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T39" source="S32" target="S33">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="action">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="put:boading">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T40" source="S33" target="S31">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Passenger link GateLounge">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Passenger link  GateLounge no change">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T41" source="S33" target="S34">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Passenger link  GateLounge">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Passenger link  GateLounge change">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T43" source="S23" target="S24">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Passenger in Passengerway">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Passenger in Passengerway change">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T48" source="S23" target="S23">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Passenger in Passengerway">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Passenger in Passengerway no change">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T55" source="S23" target="S35">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Passenger in Airport">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Passenger in Airport change">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+</StatesMachines>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StatesMachines name="Untitled">
+            <foregroundColor b="0" g="0" r="0"/>
+            <backgroundColor b="255" g="255" r="255"/>
+            <State name="S0">
+                        <bounds height="45" width="45" x="-25" y="241"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <State name="S1">
+                        <bounds height="45" width="45" x="707" y="262"/>
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+            </State>
+            <Transition name="T0" source="S0" target="S1">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Passenger in PassagewayToShop &amp;&amp; get:currentLuminance of Light &amp;&amp; get:passengerTelephoneNumber of Passenger">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Passenger in PassagewayToShop change">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="action">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="light = call_luminanceAdjust(currentLuminance, passengerTelephoneNumber) &amp;&amp; put:light">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T2" source="S0" target="S0">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Passenger in PassagewayToShop">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Passenger in PassagewayToShop no change">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T1" source="S1" target="S0">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Passenger in PassagewayToShop &amp;&amp; get:currentLuminance of Light &amp;&amp; get:passengerTelephoneNumber of Passenger">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Passenger in PassagewayToShop no change">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="action">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="light = call_luminanceAdjust(currentLuminance, passengerTelephoneNumber) &amp;&amp; put:light">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+            <Transition name="T3" source="S1" target="S1">
+                        <foregroundColor b="0" g="0" r="0"/>
+                        <backgroundColor b="255" g="255" r="255"/>
+                        <Event name="input">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="get:Passenger in PassagewayToShop">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+                        <Event name="guard">
+                                    <foregroundColor b="0" g="0" r="0"/>
+                                    <backgroundColor b="255" g="255" r="255"/>
+                                    <Action name="Passenger in PassagewayToShop change">
+                                                <foregroundColor b="0" g="0" r="0"/>
+                                                <backgroundColor b="255" g="255" r="255"/>
+                                    </Action>
+                        </Event>
+            </Transition>
+</StatesMachines>

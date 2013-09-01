@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bigraph:bigraph xmlns:bigraph="http://www.itu.dk/research/pls/xmlns/2010/bigraph">
+  <signature:signature xmlns:signature="http://www.itu.dk/research/pls/xmlns/2010/signature">
+    <signature:control xmlns:big-red="http://www.itu.dk/research/pls/xmlns/2010/big-red" big-red:label="person" kind="active" name="Person" placesort="UML_Class">
+      <signature:port name="pre_illum" portsort="none:none">
+        <big-red:port-appearance big-red:distance="-0.0" big-red:segment="0"/>
+      </signature:port>
+      <big-red:shape big-red:shape="polygon">
+        <big-red:point big-red:x="10" big-red:y="-50"/>
+        <big-red:point big-red:x="40" big-red:y="20"/>
+        <big-red:point big-red:x="-20" big-red:y="20"/>
+      </big-red:shape>
+    </signature:control>
+    <signature:control xmlns:big-red="http://www.itu.dk/research/pls/xmlns/2010/big-red" big-red:label="light" kind="active" name="Light" placesort="UML_Class">
+      <signature:port name="illum" portsort="none:none">
+        <big-red:port-appearance big-red:distance="0.5" big-red:segment="7"/>
+      </signature:port>
+      <big-red:shape big-red:shape="polygon">
+        <big-red:point big-red:x="20" big-red:y="-40"/>
+        <big-red:point big-red:x="70" big-red:y="10"/>
+        <big-red:point big-red:x="20" big-red:y="10"/>
+        <big-red:point big-red:x="10" big-red:y="30"/>
+        <big-red:point big-red:x="0" big-red:y="30"/>
+        <big-red:point big-red:x="-10" big-red:y="10"/>
+        <big-red:point big-red:x="-60" big-red:y="10"/>
+        <big-red:point big-red:x="-10" big-red:y="-40"/>
+      </big-red:shape>
+    </signature:control>
+    <signature:control xmlns:big-red="http://www.itu.dk/research/pls/xmlns/2010/big-red" big-red:label="value" kind="active" name="Value" placesort="UML_Attribute:int">
+      <signature:port name="value_is" portsort="none:none">
+        <big-red:port-appearance big-red:distance="0.49755165556504966" big-red:segment="0"/>
+      </signature:port>
+      <big-red:shape big-red:shape="oval"/>
+    </signature:control>
+    <signature:control xmlns:big-red="http://www.itu.dk/research/pls/xmlns/2010/big-red" big-red:label="pre_illum" kind="active" name="Pre_illum" placesort="UML_Class">
+      <signature:port name="value_is" portsort="none:none">
+        <big-red:port-appearance big-red:distance="0.5" big-red:segment="1"/>
+      </signature:port>
+      <signature:port name="upperBound" portsort="none:none">
+        <big-red:port-appearance big-red:distance="0.35" big-red:segment="2"/>
+      </signature:port>
+      <signature:port name="lowerBound" portsort="none:none">
+        <big-red:port-appearance big-red:distance="0.625" big-red:segment="0"/>
+      </signature:port>
+      <signature:port name="pre_illum_is" portsort="none:none">
+        <big-red:port-appearance big-red:distance="0.5" big-red:segment="3"/>
+      </signature:port>
+      <big-red:shape big-red:shape="polygon">
+        <big-red:point big-red:x="0" big-red:y="0"/>
+        <big-red:point big-red:x="0" big-red:y="40"/>
+        <big-red:point big-red:x="-40" big-red:y="40"/>
+        <big-red:point big-red:x="-40" big-red:y="0"/>
+      </big-red:shape>
+    </signature:control>
+    <signature:control xmlns:big-red="http://www.itu.dk/research/pls/xmlns/2010/big-red" big-red:label="illum" kind="active" name="Illum" placesort="UML_Class">
+      <signature:port name="value_is" portsort="none:none">
+        <big-red:port-appearance big-red:distance="0.5" big-red:segment="1"/>
+      </signature:port>
+      <signature:port name="upperBound" portsort="none:none">
+        <big-red:port-appearance big-red:distance="0.375" big-red:segment="2"/>
+      </signature:port>
+      <signature:port name="lowerBound" portsort="none:none">
+        <big-red:port-appearance big-red:distance="0.6" big-red:segment="0"/>
+      </signature:port>
+      <signature:port name="illum_is" portsort="none:none">
+        <big-red:port-appearance big-red:distance="0.525" big-red:segment="3"/>
+      </signature:port>
+      <big-red:shape big-red:shape="polygon">
+        <big-red:point big-red:x="0" big-red:y="0"/>
+        <big-red:point big-red:x="0" big-red:y="40"/>
+        <big-red:point big-red:x="-40" big-red:y="40"/>
+        <big-red:point big-red:x="-40" big-red:y="0"/>
+      </big-red:shape>
+    </signature:control>
+  </signature:signature>
+  <bigraph:edge linksort="" name="prefer_illum"/>
+  <bigraph:edge linksort="" name="current_illum"/>
+  <bigraph:edge linksort="" name="illum_upperBound"/>
+  <bigraph:edge linksort="" name="illum_lowerBound"/>
+  <bigraph:edge linksort="" name="illum_value_is"/>
+  <bigraph:edge linksort="" name="pre_illum_lowerBound"/>
+  <bigraph:edge linksort="" name="pre_illum_upperBound"/>
+  <bigraph:edge linksort="" name="pre_illum_value_is"/>
+  <bigraph:root name="0">
+    <bigraph:node control="Person" name="a">
+      <bigraph:port link="prefer_illum" name="pre_illum"/>
+      <bigraph:node control="Pre_illum" name="b">
+        <bigraph:port link="pre_illum_value_is" name="value_is"/>
+        <bigraph:port link="pre_illum_upperBound" name="upperBound"/>
+        <bigraph:port link="pre_illum_lowerBound" name="lowerBound"/>
+        <bigraph:port link="prefer_illum" name="pre_illum_is"/>
+        <bigraph:node control="Value" name="50">
+          <bigraph:port link="pre_illum_value_is" name="value_is"/>
+        </bigraph:node>
+        <bigraph:node control="Value" name="100">
+          <bigraph:port link="pre_illum_upperBound" name="value_is"/>
+        </bigraph:node>
+        <bigraph:node control="Value" name="30">
+          <bigraph:port link="pre_illum_lowerBound" name="value_is"/>
+        </bigraph:node>
+      </bigraph:node>
+    </bigraph:node>
+    <bigraph:node control="Light" name="c">
+      <bigraph:port link="current_illum" name="illum"/>
+      <bigraph:node control="Illum" name="d">
+        <bigraph:port link="illum_value_is" name="value_is"/>
+        <bigraph:port link="illum_upperBound" name="upperBound"/>
+        <bigraph:port link="illum_lowerBound" name="lowerBound"/>
+        <bigraph:port link="current_illum" name="illum_is"/>
+        <bigraph:node control="Value" name="30">
+          <bigraph:port link="illum_value_is" name="value_is"/>
+        </bigraph:node>
+        <bigraph:node control="Value" name="100">
+          <bigraph:port link="illum_upperBound" name="value_is"/>
+        </bigraph:node>
+        <bigraph:node control="Value" name="10">
+          <bigraph:port link="illum_lowerBound" name="value_is"/>
+        </bigraph:node>
+      </bigraph:node>
+    </bigraph:node>
+  </bigraph:root>
+</bigraph:bigraph>

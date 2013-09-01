@@ -1,0 +1,83 @@
+# Controls
+%active Greater : 2;
+%active Less : 2;
+%active GreaterOrEqual : 2;
+%active LessOrEqual : 2;
+%active Equal : 2;
+%active NotEqual : 2;
+%active ConsultingRoom : 0;
+%active ChargingRoom : 0;
+%active Pharmacy : 0;
+%active Prescription : 1;
+%active Patient : 3;
+%active Material : 0;
+%active Computer : 1;
+%active Hospital : 0;
+%active Bill : 1;
+%active Decoction : 1;
+%active Zone : 0;
+%active Light : 1;
+%active Pill : 1;
+%active IsDecoction : 3;
+%active Value : 1;
+%active True : 1;
+%active False : 1;
+
+# Names
+%innername a;
+%innername connected;
+%innername isDecoction;
+%innername patient_bill_payed;
+%innername patient_prescription;
+
+# Rules
+%rule r_0 Hospital.$0 | Patient[idle,idle,isDecoction:edge].$1 -> Hospital.($0 | Patient[idle,idle,isDecoction:edge].$1);
+%rule r_1 Patient[idle,idle,isDecoction:edge].$2 | ConsultingRoom.$0 | $1 -> ConsultingRoom.($0 | Patient[idle,idle,isDecoction:edge].$2) | $1;
+%rule r_2 ConsultingRoom.(Patient[idle,idle,isDecoction:edge].$1 | Computer[connected:edge]) | $0 -> ConsultingRoom.(Patient[patient_prescription:edge,idle,isDecoction:edge].$1 | Computer[connected:edge].Prescription[patient_prescription:edge]) | $0;
+%rule r_3 ChargingRoom.Computer[connected:edge] | ConsultingRoom.(Patient[patient_prescription:edge,idle,isDecoction:edge].$1 | Computer[connected:edge].Prescription[patient_prescription:edge]) | $0 -> ChargingRoom.Computer[connected:edge].Bill[idle] | ConsultingRoom.(Patient[patient_prescription:edge,idle,isDecoction:edge].$1 | Computer[connected:edge].Prescription[patient_prescription:edge]) | $0;
+%rule r_4 ConsultingRoom.(Patient[patient_prescription:edge,idle,isDecoction:edge].$2 | $0) | $1 -> ConsultingRoom.$0 | Patient[patient_prescription:edge,idle,isDecoction:edge].$2 | $1;
+%rule r_5 ChargingRoom.$0 | Patient[patient_prescription:edge,idle,isDecoction:edge].$2 | $1 -> ChargingRoom.($0 | Patient[patient_prescription:edge,idle,isDecoction:edge].$2) | $1;
+%rule r_6 ChargingRoom.(Computer[connected:edge].Bill[idle] | Patient[patient_prescription:edge,idle,isDecoction:edge].$1) | $0 -> ChargingRoom.(Computer[connected:edge].Bill[patient_bill_payed:edge] | Patient[patient_prescription:edge,patient_bill_payed:edge,isDecoction:edge].$1) | $0;
+%rule r_7 Pharmacy.Computer[connected:edge] | ChargingRoom.(Patient[patient_prescription:edge,patient_bill_payed:edge,isDecoction:edge].IsDecoction[isDecoction:edge,value_is:edge,leftValue:edge].Value[value_is:edge] | $1) | Equal[leftValue:edge,rightValue:edge] | False[rightValue:edge] | $0 -> Pharmacy.(Computer[connected:edge] | Pill[idle]) | ChargingRoom.(Patient[patient_prescription:edge,patient_bill_payed:edge,isDecoction:edge].IsDecoction[isDecoction:edge,value_is:edge,idle].Value[value_is:edge] | $1) | $0;
+%rule r_8 Pharmacy.Computer[connected:edge] | ChargingRoom.(Patient[patient_prescription:edge,patient_bill_payed:edge,isDecoction:edge].IsDecoction[isDecoction:edge,value_is:edge,leftValue:edge].Value[value_is:edge] | $1) | Equal[leftValue:edge,rightValue:edge] | True[rightValue:edge] | $0 -> Pharmacy.(Computer[connected:edge] | Material) | ChargingRoom.(Patient[patient_prescription:edge,patient_bill_payed:edge,isDecoction:edge].IsDecoction[isDecoction:edge,value_is:edge,idle].Value[value_is:edge] | $1) | $0;
+%rule r_9 Pharmacy.(Material | Computer[connected:edge] | $1) | $0 -> Pharmacy.(Computer[connected:edge] | $1 | Decoction[idle]) | $0;
+%rule r_10 ChargingRoom.(Patient[patient_prescription:edge,patient_bill_payed:edge,isDecoction:edge].$2 | $0) | $1 -> ChargingRoom.$0 | Patient[patient_prescription:edge,patient_bill_payed:edge,isDecoction:edge].$2 | $1;
+%rule r_11 Pharmacy.$0 | Patient[patient_prescription:edge,patient_bill_payed:edge,isDecoction:edge].$2 | $1 -> Pharmacy.($0 | Patient[patient_prescription:edge,patient_bill_payed:edge,isDecoction:edge].$2) | $1;
+%rule r_12 Pharmacy.(Patient[patient_prescription:edge,patient_bill_payed:edge,isDecoction:edge].IsDecoction[isDecoction:edge,value_is:edge,leftValue:edge].Value[value_is:edge] | Pill[idle] | $0) | Equal[leftValue:edge,rightValue:edge] | False[rightValue:edge] | $1 -> Pharmacy.(Patient[patient_pill:edge,idle,isDecoction:edge].IsDecoction[isDecoction:edge,value_is:edge,idle].Value[value_is:edge] | Pill[patient_pill:edge] | $0) | $1;
+%rule r_13 Pharmacy.(Decoction[idle] | Patient[patient_prescription:edge,patient_bill_payed:edge,isDecoction:edge].IsDecoction[isDecoction:edge,value_is:edge,leftValue:edge].Value[value_is:edge] | $0) | Equal[leftValue:edge,rightValue:edge] | True[rightValue:edge] | $1 -> Pharmacy.(Decoction[patient_decoction:edge] | Patient[patient_decoction:edge,idle,isDecoction:edge].IsDecoction[isDecoction:edge,value_is:edge,idle].Value[value_is:edge] | $0) | $1;
+%rule r_14 Pharmacy.(Patient[patient_decoction:edge,idle,isDecoction:edge].$2 | Decoction[patient_decoction:edge] | $0) | $1 -> Pharmacy.$0 | Patient[patient_decoction:edge,idle,isDecoction:edge].$2 | Decoction[patient_decoction:edge] | $1;
+%rule r_15 Pharmacy.(Patient[patient_decoction:edge,idle,isDecoction:edge].$2 | Decoction[patient_decoction:edge] | $0) | $1 -> Pharmacy.$0 | Patient[patient_decoction:edge,idle,isDecoction:edge].$2 | Decoction[patient_decoction:edge] | $1;
+%rule r_16 Hospital.(Patient[patient_pill:edge,idle,isDecoction:edge].$1 | Pill[patient_pill:edge] | $0) -> Hospital.$0 | Patient[patient_pill:edge,idle,isDecoction:edge].$1 | Pill[patient_pill:edge];
+%rule r_17 Hospital.(Patient[patient_decoction:edge,idle,isDecoction:edge].$1 | Decoction[patient_decoction:edge] | $0) -> Hospital.$0 | Patient[patient_decoction:edge,idle,isDecoction:edge].$1 | Decoction[patient_decoction:edge];
+%rule r_18 Patient[patient_prescription:edge,idle,isDecoction:edge].$2 | ConsultingRoom.$0 | $1 -> ConsultingRoom.($0 | Patient[patient_prescription:edge,idle,isDecoction:edge].$2) | $1;
+%rule r_19 Patient[patient_prescription:edge,patient_bill_payed:edge,isDecoction:edge].$2 | ConsultingRoom.$0 | $1 -> ConsultingRoom.($0 | Patient[patient_prescription:edge,patient_bill_payed:edge,isDecoction:edge].$2) | $1;
+%rule r_20 ConsultingRoom.$0 | Pill[patient_pill:edge] | Patient[patient_pill:edge,idle,isDecoction:edge].$2 | $1 -> ConsultingRoom.($0 | Patient[patient_pill:edge,idle,isDecoction:edge].$2 | Pill[patient_pill:edge]) | $1;
+%rule r_21 Patient[patient_decoction:edge,idle,isDecoction:edge].$2 | ConsultingRoom.$0 | Decoction[patient_decoction:edge] | $1 -> ConsultingRoom.($0 | Patient[patient_decoction:edge,idle,isDecoction:edge].$2 | Decoction[patient_decoction:edge]) | $1;
+%rule r_22 ConsultingRoom.(Patient[idle,idle,isDecoction:edge].$2 | $0) | $1 -> ConsultingRoom.$0 | Patient[idle,idle,isDecoction:edge].$2 | $1;
+%rule r_23 ConsultingRoom.(Patient[patient_prescription:edge,patient_bill_payed:edge,isDecoction:edge].$2 | $0) | $1 -> ConsultingRoom.$0 | Patient[patient_prescription:edge,patient_bill_payed:edge,isDecoction:edge].$2 | $1;
+%rule r_24 ConsultingRoom.(Patient[patient_pill:edge,idle,isDecoction:edge].$2 | Pill[patient_pill:edge] | $0) | $1 -> ConsultingRoom.$0 | Patient[patient_pill:edge,idle,isDecoction:edge].$2 | Pill[patient_pill:edge] | $1;
+%rule r_25 ConsultingRoom.(Patient[patient_decoction:edge,idle,isDecoction:edge].$2 | Decoction[patient_decoction:edge] | $0) | $1 -> ConsultingRoom.$0 | Patient[patient_decoction:edge,idle,isDecoction:edge].$2 | Decoction[patient_decoction:edge] | $1;
+%rule r_26 ChargingRoom.$0 | Patient[idle,idle,isDecoction:edge].$2 | $1 -> ChargingRoom.($0 | Patient[idle,idle,isDecoction:edge].$2) | $1;
+%rule r_27 ChargingRoom.$0 | Patient[patient_prescription:edge,patient_bill_payed:edge,isDecoction:edge].$2 | $1 -> ChargingRoom.($0 | Patient[patient_prescription:edge,patient_bill_payed:edge,isDecoction:edge].$2) | $1;
+%rule r_28 ChargingRoom.$0 | Patient[Patient_pill:edge,idle,isDecoction:edge].$2 | Pill[Patient_pill:edge] | $1 -> ChargingRoom.($0 | Patient[Patient_pill:edge,idle,isDecoction:edge].$2 | Pill[Patient_pill:edge]) | $1;
+%rule r_29 ChargingRoom.$0 | Patient[patient_decoction:edge,idle,isDecoction:edge].$2 | Decoction[patient_decoction:edge] | $1 -> ChargingRoom.($0 | Patient[patient_decoction:edge,idle,isDecoction:edge].$2 | Decoction[patient_decoction:edge]) | $1;
+%rule r_30 ChargingRoom.(Patient[idle,idle,isDecoction:edge].$2 | $0) | $1 -> ChargingRoom.$0 | Patient[idle,idle,isDecoction:edge].$2 | $1;
+%rule r_31 ChargingRoom.(Patient[patient_prescription:edge,idle,isDecoction:edge].$2 | $0) | $1 -> ChargingRoom.$0 | Patient[patient_prescription:edge,idle,isDecoction:edge].$2 | $1;
+%rule r_32 ChargingRoom.(Patient[patient_pill:edge,idle,isDecoction:edge].$2 | Pill[patient_pill:edge] | $0) | $1 -> ChargingRoom.$0 | Patient[patient_pill:edge,idle,isDecoction:edge].$2 | Pill[patient_pill:edge] | $1;
+%rule r_33 ChargingRoom.(Patient[patient_decoction:edge,idle,isDecoction:edge].$2 | Decoction[patient_decoction:edge] | $0) | $1 -> ChargingRoom.$0 | Patient[patient_decoction:edge,idle,isDecoction:edge].$2 | Decoction[patient_decoction:edge] | $1;
+%rule r_34 Pharmacy.$0 | Patient[idle,idle,isDecoction:edge].$2 | $1 -> Pharmacy.($0 | Patient[idle,idle,isDecoction:edge].$2) | $1;
+%rule r_35 Pharmacy.$0 | Patient[patient_prescription:edge,idle,isDecoction:edge].$2 | $1 -> Pharmacy.($0 | Patient[patient_prescription:edge,idle,isDecoction:edge].$2) | $1;
+%rule r_36 Pharmacy.$0 | Patient[patient_pill:edge,idle,isDecoction:edge].$2 | Pill[patient_pill:edge] | $1 -> Pharmacy.($0 | Patient[patient_pill:edge,idle,isDecoction:edge].$2 | Pill[patient_pill:edge]) | $1;
+%rule r_37 Pharmacy.$0 | Patient[patient_decoction:edge,idle,isDecoction:edge].$2 | Decoction[patient_decoction:edge] | $1 -> Pharmacy.($0 | Patient[patient_decoction:edge,idle,isDecoction:edge].$2 | Decoction[patient_decoction:edge]) | $1;
+%rule r_38 Pharmacy.(Patient[idle,idle,isDecoction:edge].$2 | $0) | $1 -> Pharmacy.$0 | Patient[idle,idle,isDecoction:edge].$2 | $1;
+%rule r_39 Pharmacy.(Patient[patient_prescription:edge,idle,isDecoction:edge].$2 | $0) | $1 -> Pharmacy.$0 | Patient[patient_prescription:edge,idle,isDecoction:edge].$2 | $1;
+%rule r_40 Pharmacy.(Patient[patient_prescription:edge,patient_bill_payed:edge,isDecoction:edge].$2 | $0) | $1 -> Pharmacy.$0 | Patient[patient_prescription:edge,patient_bill_payed:edge,isDecoction:edge].$2 | $1;
+%rule r_41 Hospital.(Patient[idle,idle,isDecoction:edge].$1 | $0) -> Hospital.$0 | Patient[idle,idle,isDecoction:edge].$1;
+%rule r_42 Hospital.(Patient[patient_prescription:edge,idle,isDecoction:edge].$1 | $0) -> Hospital.$0 | Patient[patient_prescription:edge,idle,isDecoction:edge].$1;
+%rule r_43 Hospital.(Patient[patient_prescription:edge,patient_bill_payed:edge,isDecoction:edge].$1 | $0) -> Hospital.$0 | Patient[patient_prescription:edge,patient_bill_payed:edge,isDecoction:edge].$1;
+
+# Model
+%agent a:Hospital.(c:ConsultingRoom.f:Computer[connected:edge] | d:ChargingRoom.g:Computer[connected:edge] | e:Pharmacy.h:Computer[connected:edge]) | b:Patient[idle,idle,idle];
+
+# Go!
+%check;

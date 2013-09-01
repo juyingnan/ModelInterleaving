@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Services name="ServiceModel">
+	<Address path=":8080/AirportInterleavingServices/services/" ip="127.0.0.1" namespace="http://interleaving"/>
+	<Service index="1" name="checkInEntryNotice" path="CheckIn" function="checkInEntryNotice" isProcess="false"/>
+	<Service index="2" name="getBoardingPass" path="CheckIn" function="getBoardingPass" isProcess="false"/>
+	<Service index="3" name="boardingPassCompare" path="GateLounge" function="boardingPassCompare" isProcess="false"/>
+	<Service index="4" name="luminanceAdjust" path="PassageWay" function="luminanceAdjust" isProcess="false"/>
+	<Service index="5" name="advertisementSelect" path="PassageWay" function="advertisementSelect" isProcess="false"/>
+	<Service index="6" name="passengerInfoCompare" path="Security" function="passengerInfoCompare" isProcess="false"/>
+	<Service index="7" name="shoppingRecommendationByAge" path="ShoppingZone" function="shoppingRecommendation" isProcess="false"/>
+	<Service index="8" name="shoppingRecommendationByInterest" path="ShoppingZone" function="shoppingRecommendation" isProcess="false"/>
+</Services>
