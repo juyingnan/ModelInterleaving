@@ -73,6 +73,7 @@ public class ResultPathCompare {
 				if(!isSame){// 发现不同的点
 					break;
 				}
+				statusCount++;
 			}
 			
 			if(!isSame){// 发现不同的点
@@ -122,7 +123,7 @@ public class ResultPathCompare {
 
 				for (int i = 0; i < mx.length; i++) {
 					if (i == index) {
-						actual = actual + ",M" + i + "0";
+						actual = actual + ",M" + i + "1";
 					} else {
 						actual = actual + "," + mx[i];
 					}
