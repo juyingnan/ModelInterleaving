@@ -276,12 +276,12 @@ public class BigraphServer
 
 		while (!line.equals("end"))
 		{
-			TermParser termParser = new TermParser();
+			//TermParser termParser = new TermParser();
 			int maxIndex = this.currentContextModel.length - 1;
 			// System.out.println(this.getCurrentIndex());
 			// System.out.println(this.currentContextModel[this.getCurrentIndex()]);
 			
-			Term currentContext = termParser.apply(this.currentContextModel[this.getCurrentIndex()]);
+			Term currentContext = TermParser.apply(this.currentContextModel[this.getCurrentIndex()]);
 			BigraphElement bigraphModel = this.bigraphParser.TranslateTerm(currentContext);
 			Term nextContext = null;
 			BigraphElement nextBigraphModel = null;
@@ -291,7 +291,7 @@ public class BigraphServer
 				// System.out.println(maxIndex - 1);
 				// System.out.println(this.currentContextModel[this.getCurrentIndex() + 1]);
 				
-				nextContext = termParser.apply(this.currentContextModel[this.getCurrentIndex() + 1]);
+				nextContext = TermParser.apply(this.currentContextModel[this.getCurrentIndex() + 1]);
 				nextBigraphModel = this.bigraphParser.TranslateTerm(nextContext);
 			}
 			if (line.contains("nextContext:") && line.contains("get") && line.contains(";") && nextBigraphModel != null)
