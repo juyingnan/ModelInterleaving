@@ -41,6 +41,7 @@ public class BigraphServer
 		this.currentIndex = 0;
 		this.currentContextIndex = 0;
 		this.currentContextModel = this.contextModels.get(this.currentContextIndex);
+		System.out.println("bigraph server ready");
 		// generateDataModels();
 	}
 
