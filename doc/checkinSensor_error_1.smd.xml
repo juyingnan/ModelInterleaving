@@ -34,7 +34,7 @@
                         <Event name="action">
                                     <foregroundColor b="0" g="0" r="0"/>
                                     <backgroundColor b="255" g="255" r="255"/>
-                                    <Action name="boading = call_shoppingRecommendation(passengerTelephoneNumber) &amp;&amp; put:boading">
+                                    <Action name="boading = call_shoppingRecommendationByInterest(passengerTelephoneNumber) &amp;&amp; put:boading">
                                                 <foregroundColor b="0" g="0" r="0"/>
                                                 <backgroundColor b="255" g="255" r="255"/>
                                     </Action>

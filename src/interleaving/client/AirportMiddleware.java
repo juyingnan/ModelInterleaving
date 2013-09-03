@@ -24,6 +24,7 @@ public class AirportMiddleware implements Runnable
 	protected Client					bigraphClient;
 	protected Client					serviceClient;
 	protected boolean					transFlag;
+	protected String					outputFileName;
 
 	public AirportMiddleware()
 	{
@@ -47,6 +48,7 @@ public class AirportMiddleware implements Runnable
 		String ip = configInfo.getServerIP();
 		this.bigraphClient = new Client(ip, configInfo.getBigraphServerPort());
 		this.serviceClient = new Client(ip, configInfo.getServiceServerPort());
+		outputFileName = "D:\\ouputText.txt";
 	}
 
 	public AirportMiddleware(int bigraphServerPort, int serviceServerPort, String outputFileName)
@@ -71,11 +73,37 @@ public class AirportMiddleware implements Runnable
 		String ip = configInfo.getServerIP();
 		this.bigraphClient = new Client(ip, bigraphServerPort);
 		this.serviceClient = new Client(ip, serviceServerPort);
+		this.outputFileName = outputFileName;
+	}
+
+	public AirportMiddleware(int bigraphServerPort, int serviceServerPort, String efPathString, String outputFileName)
+	{
+		ConfigInfoXMLParser configParser = new ConfigInfoXMLParser();
+		ConfigInfo configInfo = configParser.parserXml();
+		EFSMXMLParser efsmParser = new EFSMXMLParser();
+		String[] efPath = efPathString.split("&");
+		for (String path : efPath)
+		{
+			EFSMModel e = efsmParser.parserXml(path);
+			this.efsmModel.add(e);
+		}
+		for (EFSMModel efsmModel_x : this.efsmModel)
+		{
+			efsmModel_x.initStates();
+		}
+		for (EFSMModel efsmModel_x : this.efsmModel)
+		{
+			this.transUtil.add(new TransitionUtil(efsmModel_x.getData()));
+		}
+		String ip = configInfo.getServerIP();
+		this.bigraphClient = new Client(ip, bigraphServerPort);
+		this.serviceClient = new Client(ip, serviceServerPort);
+		this.outputFileName = outputFileName;
 	}
 
 	public void EFSMModelClientsRun()
 	{
-		File file = new File("D:\\ouputText.txt");
+		File file = new File(outputFileName);
 		if (file.exists())
 		{
 			file.delete();
@@ -142,9 +170,9 @@ public class AirportMiddleware implements Runnable
 				// currentM[3] = interleaving(efsmModel_3, tranUtil_3, currentM_3);
 				// printStatus(Integer.parseInt(preC), currentM, out);
 
-//				System.out.println();
-//				out.println();
-//				out.flush();
+				// System.out.println();
+				// out.println();
+				// out.flush();
 
 				if (preC.equals(maxC))
 				{

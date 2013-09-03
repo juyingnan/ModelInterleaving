@@ -34,7 +34,7 @@
                         <Event name="action">
                                     <foregroundColor b="0" g="0" r="0"/>
                                     <backgroundColor b="255" g="255" r="255"/>
-                                    <Action name="light = call_call_shoppingRecommendation(passengerAge) &amp;&amp; put:light">
+                                    <Action name="light = call_call_shoppingRecommendationByInterest(passengerAge) &amp;&amp; put:light">
                                                 <foregroundColor b="0" g="0" r="0"/>
                                                 <backgroundColor b="255" g="255" r="255"/>
                                     </Action>
