@@ -41,7 +41,7 @@ public class BigraphServer
 		this.currentIndex = 0;
 		this.currentContextIndex = 0;
 		this.currentContextModel = this.contextModels.get(this.currentContextIndex);
-		System.out.println("bigraph server ready");
+		System.out.println("bigraph server ready");	//Very good hint! Especially for those very large txt file! Nahe is Great!
 		// generateDataModels();
 	}
 
@@ -62,6 +62,7 @@ public class BigraphServer
 		this.currentContextIndex = 0;
 		this.currentContextModel = this.contextModels.get(this.currentContextIndex);
 		this.name = name;
+		System.out.println("bigraph server ready");
 		// generateDataModels();
 	}
 
