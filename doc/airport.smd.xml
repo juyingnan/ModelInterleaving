@@ -836,7 +836,7 @@
                         <Event name="action">
                                     <foregroundColor b="0" g="0" r="0"/>
                                     <backgroundColor b="255" g="255" r="255"/>
-                                    <Action name="ShoppingZone = call_shoppingRecommendation(passengerTelephoneNumber)">
+                                    <Action name="ShoppingZone = call_shoppingRecommendationByInterest(passengerTelephoneNumber)">
                                                 <foregroundColor b="0" g="0" r="0"/>
                                                 <backgroundColor b="255" g="255" r="255"/>
                                     </Action>
