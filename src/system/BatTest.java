@@ -51,12 +51,16 @@ class BigraphServerThread extends Thread
 	public BigraphServerThread(String threadName)
 	{
 		super(threadName);
+		isReady = false;
 	}
+
+	public boolean	isReady;
 
 	public void run()
 	{
 		System.out.println(getName() + " 线程运行开始!");
 		BigraphServer bigraphServerUtil = new BigraphServer();
+		isReady = true;
 		bigraphServerUtil.bigraphServerRun();
 		System.out.println("BigraphServer");
 		System.out.println(getName() + " 线程运行结束!");

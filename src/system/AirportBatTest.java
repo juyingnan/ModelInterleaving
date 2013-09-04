@@ -16,16 +16,25 @@ public class AirportBatTest
 
 		for (int i = 0; i < paths.length; i++)
 		{
-			new BigraphServerThread("BS").start();
-			new ServiceServerThread("SS").start();
+			BigraphServerThread bigraphServerThread = new BigraphServerThread("BS");
+			ServiceServerThread serviceServerThread = new ServiceServerThread("SS");
+			bigraphServerThread.start();
+			serviceServerThread.start();
+			// new BigraphServerThread("BS").start();
+			// new ServiceServerThread("SS").start();
 
-			try
+			int count = 0;
+			while (!bigraphServerThread.isReady)
 			{
-				Thread.sleep(5000);
-			}
-			catch (Exception e)
-			{
-				e.printStackTrace();
+				try
+				{
+					Thread.sleep(1000);
+					System.out.println("wait for " + count++ + " seconds.");
+				}
+				catch (Exception e)
+				{
+					e.printStackTrace();
+				}
 			}
 
 			String efPathString = paths[i];
@@ -39,7 +48,7 @@ public class AirportBatTest
 
 			try
 			{
-				Thread.sleep(2000);
+				Thread.sleep(10000);
 			}
 			catch (Exception e)
 			{
