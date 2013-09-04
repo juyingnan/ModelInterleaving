@@ -6,9 +6,7 @@ public class AirportBatTest
 {
 	public static void main(String[] args)
 	{
-		String paths[] = {
-				"doc\\checkinSensor.smd.xml&doc\\lightSensor_1.smd.xml&doc\\lightSensor_2.smd.xml&doc\\billbroadSensor.smd.xml&doc\\lightSensor_3.smd.xml",
-				// this one may have problem
+		String paths[] = { "doc\\checkinSensor.smd.xml&doc\\lightSensor_1.smd.xml&doc\\lightSensor_2.smd.xml&doc\\billbroadSensor.smd.xml&doc\\lightSensor_3.smd.xml",
 				"doc\\checkinSensor_error_1.smd.xml&doc\\lightSensor_1.smd.xml&doc\\lightSensor_2.smd.xml&doc\\billbroadSensor.smd.xml&doc\\lightSensor_3.smd.xml",
 				"doc\\checkinSensor.smd.xml&doc\\lightSensor_1_error_1.smd.xml&doc\\lightSensor_2.smd.xml&doc\\billbroadSensor.smd.xml&doc\\lightSensor_3.smd.xml",
 				"doc\\checkinSensor.smd.xml&doc\\lightSensor_1_error_2.smd.xml&doc\\lightSensor_2.smd.xml&doc\\billbroadSensor.smd.xml&doc\\lightSensor_3.smd.xml",
