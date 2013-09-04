@@ -2,11 +2,7 @@
 <Config name="Configration Information">
 	<ServerIP ip="127.0.0.1"/>
 	<!-- <BigraphModel filepath="doc/BigraphModelGen(true).txt" serverport="4700"/> -->
-<<<<<<< HEAD
 	<BigraphModel filepath="doc/funny2.txt" serverport="4700"/>
-=======
-	<BigraphModel filepath="doc/funny.txt" serverport="4700"/>
->>>>>>> ba8db624b1f446e27e0f757f7fa26c651639672a
 	<BigraphDataModel filepath="doc/DecoctionDataModel.xml"/>
 	<!--  <EFSMModel filepath="doc/EFSMModel.smd.xml"/> -->
 	<EFSMModel filepath="doc/airport.smd.xml"/>
