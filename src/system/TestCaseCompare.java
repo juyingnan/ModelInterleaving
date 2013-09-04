@@ -16,13 +16,13 @@ public class TestCaseCompare
 
 	public static void main(String[] args) throws FileNotFoundException, IOException
 	{
-		ResultPathCompare RPC = new ResultPathCompare();
+		ResultPathCompare testCaseCompare = new ResultPathCompare();
 		String fileName = "D:\\Airport_Result.xlsx";
 		String sheetName = "Airport";
-		ArrayList<String> originalPaths = RPC.getPathStrings(fileName, sheetName, 0);
+		ArrayList<String> originalPaths = testCaseCompare.getPathStrings(fileName, sheetName, 0);
 		for (int i = 1; i <= 6; i++)
 		{
-			ArrayList<String> newPaths = RPC.getPathStrings(fileName, sheetName, i);
+			ArrayList<String> newPaths = testCaseCompare.getPathStrings(fileName, sheetName, i);
 			String result = PathCompare(originalPaths, newPaths);
 			System.out.print("Error" + (i > 9 ? "" : "0") + i + ":\t");
 			System.out.println(result);
@@ -105,13 +105,14 @@ public class TestCaseCompare
 			if (item.startsWith("M"))
 			{
 				int t = Integer.parseInt(item.substring(1, 3));
-				if (result.size() == 0)
-					result.add(t);
-				else
-				{
-					if (result.get(result.size() - 1) != t)
-						result.add(t);
-				}
+				// if (result.size() == 0)
+				// result.add(t);
+				// else
+				// {
+				// if (result.get(result.size() - 1) != t)
+				// result.add(t);
+				// }
+				result.add(t);
 			}
 		}
 		return result;
