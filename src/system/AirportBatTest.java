@@ -14,7 +14,7 @@ public class AirportBatTest
 				"doc\\checkinSensor.smd.xml&doc\\lightSensor_1.smd.xml&doc\\lightSensor_2.smd.xml&doc\\billbroadSensor.smd.xml&doc\\lightSensor_3_error_1.smd.xml",
 				"doc\\checkinSensor.smd.xml&doc\\lightSensor_1.smd.xml&doc\\lightSensor_2.smd.xml&doc\\billbroadSensor_error_1.smd.xml&doc\\lightSensor_3.smd.xml" };
 
-		for (int i = 0; i < paths.length; i++)
+		for (int i = 6; i < paths.length; i++)
 		{
 			BigraphServerThread bigraphServerThread = new BigraphServerThread("BS");
 			ServiceServerThread serviceServerThread = new ServiceServerThread("SS");
@@ -29,7 +29,9 @@ public class AirportBatTest
 				try
 				{
 					Thread.sleep(1000);
-					System.out.println("wait for " + count++ + " seconds.");
+					count++;
+					if (count % 10 == 0)
+						System.out.println("wait for " + count + " seconds.");
 				}
 				catch (Exception e)
 				{
