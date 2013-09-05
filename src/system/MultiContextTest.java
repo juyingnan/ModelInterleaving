@@ -1,7 +1,6 @@
 package system;
 
 import interleaving.client.AirportMiddleware;
-import interleaving.client.MultiEFSMModelClients;
 import interleaving.server.BigraphServer;
 import system.ServiceServerThread;
 
