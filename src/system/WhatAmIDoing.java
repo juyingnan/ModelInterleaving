@@ -78,8 +78,8 @@ public class WhatAmIDoing
 		};
 
 		int errorCount = errorExpectRatios_2p.length;
-		int pathCount = 208;
-		int offset = 7;
+		int pathCount = 270;
+		int offset = 20;
 		// int fluc = 10 + 1;
 
 		for (int i = 0; i < errorCount; i++)
@@ -88,7 +88,7 @@ public class WhatAmIDoing
 			int expectedRatio = errorExpectRatios_1p[i];
 			if (isDef)
 			{
-				expectedRatio *= (106 - random.nextInt(offset));
+				expectedRatio *= (90 - random.nextInt(offset));
 				expectedRatio /= 100;
 			}
 			System.out.print("Error" + (i > 8 ? "" : "0") + (i + 1) + ":");
